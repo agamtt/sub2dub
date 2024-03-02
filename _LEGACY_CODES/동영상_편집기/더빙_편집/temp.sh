@@ -1,0 +1,7 @@
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS                       PORTS                                                                                         NAMES
+617511101f25        dguailab/ailab_base:2.2   "/bin/bash -c 'sudo …"   2 weeks ago         Up 2 weeks                   0.0.0.0:9512->22/tcp, 0.0.0.0:9514->80/tcp, 0.0.0.0:9513->3389/tcp, 0.0.0.0:10012->8888/tcp   aooskrap6920
+4a82f64599a3        dguailab/ailab_base:2.2   "/bin/bash -c 'sudo …"   2 weeks ago         Up 2 weeks                   0.0.0.0:9516->22/tcp, 0.0.0.0:9517->3389/tcp, 0.0.0.0:10010->8888/tcp                         cha970214-byjeho-1
+4f8a8e02f8db        dguailab/ailab_base:2.2   "/bin/bash -c 'sudo …"   3 weeks ago         Up 3 weeks                   0.0.0.0:9518->22/tcp, 0.0.0.0:10013->3389/tcp, 0.0.0.0:9519->8888/tcp                         rkdtjdals97_byjeho
+458fa76accf0        aitf:20200707             "/bin/bash -c 'servi…"   2 years ago         Up 3 weeks                   0.0.0.0:3389->3389/tcp, 0.0.0.0:7076->22/tcp                                                  aitf
+2b242642f63d        aitf:20200707             "/bin/bash -c 'servi…"   2 years ago         Exited (137) 16 months ago                                                                                                 aitf20200713
+jeho@lab6:~$ sudo docker exec -it 4f8a8e02f8db bash
