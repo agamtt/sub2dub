@@ -2,6 +2,63 @@ import os
 import cv2
 import json
 
+'''
+get image file and return similarity
+'''
+
+def calc_sim_sift(src_img_path,target_img_path):
+    # get img_file as grayscale (sift algorithm require grayscale img)
+    src_img = cv2.imread(src_img_path, cv2.IMREAD_GRAYSCALE)
+    target_img = cv2.imread(target_img_path, cv2.IMREAD_GRAYSCALE)
+
+    # get kp and des by sift algorithm
+    sift = cv2.SIFT_create()
+    kp1, des1 = sift.detectAndCompute(src_img, None)
+    kp2, des2 = sift.detectAndCompute(target_img, None)
+
+    # match the points by BFMatcher algorithm
+    bf = cv2.BFMatcher()
+    matches = bf.knnMatch(des1, des2, k=2)
+
+    good_matches = []
+    for m, n in matches:
+        if m.distance < 0.75 * n.distance:
+            good_matches.append(m)
+
+    # estimete sim by num of good_matches
+    similarity = len(good_matches) / max(len(des1), len(des2)) * 100
+    return similarity, kp1, kp2, good_matches
+
+# wrapper of get_sim_sift, print BFMatcher Map
+def get_sim_sift_imshow(src_img_path, target_img_path, img_size):
+    similarity, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
+
+    # print BFMatcher Map
+    src_img = cv2.imread(src_img_path)
+    target_img = cv2.imread(target_img_path)
+    result = cv2.drawMatches(src_img, kp1, target_img, kp2, good_matches, None, flags=2)
+
+    # 이미지 크기 조절
+    scale_percent = img_size  # 크기를 조절하려는 퍼센트
+    width = int(result.shape[1] * scale_percent / 100)
+    height = int(result.shape[0] * scale_percent / 100)
+    dim = (width, height)
+    resized_result = cv2.resize(result, dim, interpolation=cv2.INTER_AREA)
+
+    cv2.imshow("BFMatcher Map", resized_result)
+    print(f"similarity : {similarity}")
+
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+    return similarity
+
+def get_sim_sift_noshow(src_img_path, target_img_path):
+    similarity, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
+    
+    return similarity
+
+'''
 def get_first_img_num(dirname):
     file_list = os.listdir(dirname)
     file_number_list = [int(file_name.split(".")[0]) for file_name in file_list]
@@ -77,7 +134,7 @@ for ep in range(1,4):
     write_json(ep_dict,f"dub_test.json")
 
 print(ep_dict)
-
+'''
 
 
 # VIDEO_FILENAME = f"{1}blu.mkv"

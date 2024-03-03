@@ -1,0 +1,22 @@
+{
+  "dub_origin": {
+    "name": "dub38",
+    "format": "mp4",
+    "full_path": ""
+  },
+  "dub_edited": {
+    "name": "dub38_edited",
+    "format": "mp4",
+    "full_path": ""
+  },
+  "blu_origin": {
+    "name": "blu38",
+    "format": "mp4",
+    "full_path": ""
+  },
+  "output": {
+    "name": "output",
+    "format": "mp4",
+    "full_path": ""
+  }
+}
