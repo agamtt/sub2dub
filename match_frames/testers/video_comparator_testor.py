@@ -3,7 +3,7 @@ from custom_lib import file_handler as fh
 from custom_lib import video_comparator as vc
 from custom_lib import image_compare as ic
 
-folder_path = r'C:\Users\girin\Desktop\sub2dub\movies\test_ep38'
+folder_path = r'C:\Users\girin\Desktop\sub2dub\movies\test_ep'
 img_output_path = r'C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp'
 
 fileinfo = {

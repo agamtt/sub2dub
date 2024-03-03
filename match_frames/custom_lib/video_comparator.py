@@ -122,7 +122,13 @@ def shift_frame_finder(img_root_path, first_label, sim_thresh):
             sim = ic.get_sim_sift_noshow(prev_file_A_path,file_A_path)
             print(f"현재:{file_A} / sim : {sim}")
 
-            if(sim<sim_thresh): # 화면 전환 thresh : 약 50
+            if(sim<sim_thresh): # 실측 시 화면 전환 thresh : 약 50
                 print(f"shift frame : {file_A}")
 
         prev_file_A_path = file_A_path
+
+
+'''
+
+chunk analyzing
+'''
