@@ -59,6 +59,30 @@ def get_sim_sift_noshow(src_img_path, target_img_path):
     return similarity
 
 '''
+rgb pixel keypoint based algorithm
+'''
+#def calc_sim_pixel_keypoint(src_img_path,target_img_path):
+def calc_sim_pixel_keypoint(src_img_path):
+
+    image = cv2.imread(src_img_path)
+
+    x = 100
+    y = 200
+    pixel_value = image[y, x]
+
+    print(f"{pixel_value}")
+    
+    # Draw a circle to mark the point on the image
+    image_with_point = image.copy()
+    cv2.circle(image_with_point, (x, y), 5, (0, 255, 0), -1)  # Green circle with radius 5
+
+    # Display the image with marked point
+    cv2.imshow('Image with Marked Point', image_with_point)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+'''
 def get_first_img_num(dirname):
     file_list = os.listdir(dirname)
     file_number_list = [int(file_name.split(".")[0]) for file_name in file_list]

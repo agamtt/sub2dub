@@ -109,7 +109,7 @@ def shift_frame_printer(img_root_path, first_label):
             print(f"현재:{file_A} / sim : {sim}")
         prev_file_A_path = file_A_path
 
-def shift_frame_finder(img_root_path, first_label, sim_thresh):
+def shift_frame_finder_by_sift(img_root_path, first_label, sim_thresh):
     folder_A_path = os.path.join(img_root_path,first_label)
     files_A = sorted(os.listdir(folder_A_path), key=lambda x: int(x.split('.')[0]))
     
@@ -129,6 +129,7 @@ def shift_frame_finder(img_root_path, first_label, sim_thresh):
 
 
 '''
-
 chunk analyzing
 '''
+
+#def chunk_generator(json_path):

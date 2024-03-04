@@ -1,0 +1,37 @@
+{
+    "data": {
+      "video1": {
+        "video_filename": "",
+        "video_path": "",
+        "insert_video_path": "",
+        "ep": "",
+        "cuts": [
+          {"part": 1, "start_time": 0, "end_time": 10, "used": true},
+          {"part": 2, "start_time": 10, "end_time": 20, "used": false},
+          {"part": 3, "start_time": 20, "end_time": 30, "used": true}
+        ],
+        "insert": [
+          {"part": 1, "start_time": 0, "end_time": 10, "used": false},
+          {"part": 2, "start_time": 10, "end_time": 20, "used": true},
+          {"part": 3, "start_time": 20, "end_time": 30, "used": false}
+        ]
+      },
+      "video2": {
+        "video_filename": "",
+        "video_path": "",
+        "insert_video_path": "",
+        "ep": "",
+        "cuts": [
+          {"part": 1, "start_time": 0, "end_time": 10, "used": true},
+          {"part": 2, "start_time": 10, "end_time": 20, "used": false},
+          {"part": 3, "start_time": 20, "end_time": 30, "used": true}
+        ],
+        "insert": [
+          {"part": 1, "start_time": 0, "end_time": 10, "used": false},
+          {"part": 2, "start_time": 10, "end_time": 20, "used": true},
+          {"part": 3, "start_time": 20, "end_time": 30, "used": false}
+        ]
+      }
+    }
+  }
+  

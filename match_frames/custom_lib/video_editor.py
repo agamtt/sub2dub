@@ -4,7 +4,21 @@ from moviepy.video.VideoClip import TextClip
 from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip
 from moviepy.video.compositing.concatenate import concatenate_videoclips
 import os
+import cv2
+from decimal import Decimal, getcontext
 
+
+'''
+time varients(timecode and frame) handlers
+
+<<timecode>>
+"timecode means" SMPTE timecode.
+// Hours:Minutes:Seconds:Frames
+// ex) 18:53:20:06
+<<frames>>
+total frame number that starts from 0 to End of Video
+(frames are seperated image from video, 25 frames per second unless cfr)
+'''
 
 def ctos(timecode): # convert timecode to total_second
     fps=25
@@ -19,6 +33,52 @@ def frtoTC(frames, fps=25): # convert frame to timecode
     s = int(total_seconds % 60)
     f = frames % fps
     return ("%02d:%02d:%02d:%02d" % (h, m, s, f))
+
+def timecode_to_total_second(timecode):
+    fps = 25
+    hours, minutes, seconds, frames = [int(x) for x in timecode.split(":")]
+    total_seconds = hours * 3600 + minutes * 60 + seconds + frames / fps
+    return total_seconds
+
+def frame_to_timecode(frames, fps=25): # convert frame to timecode
+    total_seconds = frames / fps
+    h = int(total_seconds // 3600)
+    m = int((total_seconds % 3600) // 60)
+    s = int(total_seconds % 60)
+    f = int((total_seconds - int(total_seconds)) * fps)
+    return ("%02d:%02d:%02d:%02d" % (h, m, s, f))
+
+def frame_to_timecode_tester(frames, fps=25): # convert frame to timecode
+    total_seconds = frames / fps
+    print(f"total_seconds : {total_seconds}")
+    print(f"h : {h}")
+    print(f"m : {m}")
+    print(f"s : {s}")
+    print(f"f : {f}")
+
+    h = int(total_seconds // 3600)
+    m = int((total_seconds % 3600) // 60)
+    s = int(total_seconds % 60)
+    f = int((total_seconds - int(total_seconds)) * fps)
+
+def frame_to_timecode_decimal(frames, fps=25): # convert frame to timecode
+    getcontext().prec = 10  # 소수점 자리 수 설정
+    total_seconds = Decimal(frames) / Decimal(fps)
+    print(f"total_seconds : {total_seconds}")
+    h = int(total_seconds // 3600)
+    print(f"h : {h}")
+    m = int((total_seconds % 3600) // 60)
+    print(f"m : {m}")
+    s = int(total_seconds % 60)
+    print(f"s : {s}")
+    f = int((total_seconds - int(total_seconds)) * fps)
+    print(f"f : {f}")
+    return ("%02d:%02d:%02d:%02d" % (h, m, s, f))
+
+def timecode_to_frame(timecode,fps=25):
+    hours, minutes, seconds, frames = [int(x) for x in timecode.split(":")]
+    total_seconds = hours * 3600 + minutes * 60 + seconds + frames / fps
+    return int(total_seconds * fps)
 
 
 ## ABA -> AA
@@ -102,3 +162,32 @@ def edit_by_cutinfo(cutinfo, output_path):
             subclip_list.append(subclip)
 
     concat_subclip(subclip_list, output_path)
+
+# 25 고정프레임 이미지 셋으로 부터 비디오를 복원
+
+def images_to_video(image_folder, video_filename, fps=25):
+    # 이미지 폴더 내의 이미지 파일 목록 가져오기
+    images = [img for img in os.listdir(image_folder) if img.endswith(".jpg")]
+
+    # 이미지 파일 목록을 정렬하고 번호를 부여하여 새로운 리스트 생성
+    sorted_images = sorted(images, key=lambda x: int(x.split('.')[0]))
+
+    # 첫 번째 이미지로부터 프레임 크기 가져오기
+    first_image_path = os.path.join(image_folder, sorted_images[0])
+    frame = cv2.imread(first_image_path)
+    height, width, layers = frame.shape
+
+    # 비디오 작성 객체 생성
+    video = cv2.VideoWriter(video_filename, cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+
+    # 이미지를 비디오에 추가하고 진행 상황 표시
+    for i, image_name in enumerate(sorted_images, start=1):
+        img_path = os.path.join(image_folder, image_name)
+        img = cv2.imread(img_path)
+        video.write(img)
+        progress = i / len(sorted_images) * 100
+        print(f"image : {image_name} / Progress: {progress:.2f}%")
+
+    # 작업 완료 후 비디오 객체 해제
+    cv2.destroyAllWindows()
+    video.release()
