@@ -48,31 +48,13 @@ def frame_to_timecode(frames, fps=25): # convert frame to timecode
     f = int((total_seconds - int(total_seconds)) * fps)
     return ("%02d:%02d:%02d:%02d" % (h, m, s, f))
 
-def frame_to_timecode_tester(frames, fps=25): # convert frame to timecode
-    total_seconds = frames / fps
-    print(f"total_seconds : {total_seconds}")
-    print(f"h : {h}")
-    print(f"m : {m}")
-    print(f"s : {s}")
-    print(f"f : {f}")
-
-    h = int(total_seconds // 3600)
-    m = int((total_seconds % 3600) // 60)
-    s = int(total_seconds % 60)
-    f = int((total_seconds - int(total_seconds)) * fps)
-
 def frame_to_timecode_decimal(frames, fps=25): # convert frame to timecode
-    getcontext().prec = 10  # 소수점 자리 수 설정
+    getcontext().prec = 28  # 소수점 자리 수 설정
     total_seconds = Decimal(frames) / Decimal(fps)
-    print(f"total_seconds : {total_seconds}")
     h = int(total_seconds // 3600)
-    print(f"h : {h}")
     m = int((total_seconds % 3600) // 60)
-    print(f"m : {m}")
     s = int(total_seconds % 60)
-    print(f"s : {s}")
     f = int((total_seconds - int(total_seconds)) * fps)
-    print(f"f : {f}")
     return ("%02d:%02d:%02d:%02d" % (h, m, s, f))
 
 def timecode_to_frame(timecode,fps=25):

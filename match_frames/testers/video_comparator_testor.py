@@ -63,7 +63,7 @@ ve.edit_by_cutinfo(cutinfo, fileinfo["output"]["full_path"])
 
 #vc.shift_frame_finder_by_sift(img_output_path,"D",30)
 
-vc.seperate_video_N_save_img_label(fileinfo["frame_tester"]["full_path"],img_output_path,"frame_test_blu_ep1_cfr25_abs")
+#vc.seperate_video_N_save_img_label(fileinfo["frame_tester"]["full_path"],img_output_path,"frame_test_blu_ep1_cfr25_abs")
 #vc.seperate_video_N_save_img_label(fileinfo["dub_ep1_cfr"]["full_path"],img_output_path,"dub_ep1_cfr")
 
 
@@ -75,3 +75,19 @@ vc.seperate_video_N_save_img_label(fileinfo["frame_tester"]["full_path"],img_out
 ## image to video test...
 
 #ve.images_to_video(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr","output_blu_ep1_sqeuntial.mp4",fps=25)
+
+'''
+puzzle algorithm test
+'''
+
+#ic.get_sim_sift_imshow(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\25.jpg",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\67.jpg")
+
+ic.get_sim_sift_imshow(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\311.jpg",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\dub_ep1_cfr\300.jpg")
+
+#vc.search_and_swap(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\dub_ep1_cfr",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\output_ep1")
+
+'''
+chunk algorithm test
+'''
+
+#vc.chunk_finder_by_sift(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr")

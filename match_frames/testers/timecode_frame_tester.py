@@ -11,9 +11,10 @@ from custom_lib import video_editor as ve
 for i in range(75,100):
     print(f"{i} : {ve.frame_to_timecode(i)}") # 1 불일치
 '''
+p=None
+for frame in range(0,120):
+    if(p==ve.frame_to_timecode_decimal(frame)):
+        print(f"ya! : {frame}")
+    print(f"frame : {frame} / {ve.frame_to_timecode_decimal(frame)}")
+    p = ve.frame_to_timecode(frame)
 
-
-num = [93,94,81,82]
-for i in num:
-    #print(f"{num} : {ve.frame_to_timecode(num)}")
-    ve.frame_to_timecode_tester(i)

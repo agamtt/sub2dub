@@ -11,10 +11,23 @@ def calc_sim_sift(src_img_path,target_img_path):
     src_img = cv2.imread(src_img_path, cv2.IMREAD_GRAYSCALE)
     target_img = cv2.imread(target_img_path, cv2.IMREAD_GRAYSCALE)
 
+    # 두 이미지의 크기를 비교하여 작은 크기로 조정
+    min_height = min(src_img.shape[0], target_img.shape[0])
+    min_width = min(src_img.shape[1], target_img.shape[1])
+
+    # 두 이미지 모두 동일한 크기로 조정
+    src_img_resized = cv2.resize(src_img, (min_width, min_height))
+    target_img_resized = cv2.resize(target_img, (min_width, min_height))
+
+    if src_img is None:
+        raise Exception("ERROR : {src_img_path} is None...")
+    if target_img is None:
+        raise Exception("ERROR : {target_img} is None...")
+
     # get kp and des by sift algorithm
     sift = cv2.SIFT_create()
-    kp1, des1 = sift.detectAndCompute(src_img, None)
-    kp2, des2 = sift.detectAndCompute(target_img, None)
+    kp1, des1 = sift.detectAndCompute(src_img_resized, None)
+    kp2, des2 = sift.detectAndCompute(target_img_resized, None)
 
     # match the points by BFMatcher algorithm
     bf = cv2.BFMatcher()
@@ -26,37 +39,56 @@ def calc_sim_sift(src_img_path,target_img_path):
             good_matches.append(m)
 
     # estimete sim by num of good_matches
-    similarity = len(good_matches) / max(len(des1), len(des2)) * 100
-    return similarity, kp1, kp2, good_matches
+    try:
+        similarity = len(good_matches) / max(len(des1), len(des2)) * 100
+        return similarity, src_img, target_img, kp1, kp2, good_matches
+    except Exception as e:
+        raise e
 
+        
 # wrapper of get_sim_sift, print BFMatcher Map
-def get_sim_sift_imshow(src_img_path, target_img_path, img_size):
-    similarity, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
+def get_sim_sift_imshow(src_img_path, target_img_path, img_size=120):
+    try:
+        similarity, src_img, target_img, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
 
-    # print BFMatcher Map
-    src_img = cv2.imread(src_img_path)
-    target_img = cv2.imread(target_img_path)
-    result = cv2.drawMatches(src_img, kp1, target_img, kp2, good_matches, None, flags=2)
+        # overlay color image (for human debug only. actually compare with grayscale on calc_sim_sift())
+        src_img = cv2.imread(src_img_path)
+        target_img = cv2.imread(target_img_path)
 
-    # 이미지 크기 조절
-    scale_percent = img_size  # 크기를 조절하려는 퍼센트
-    width = int(result.shape[1] * scale_percent / 100)
-    height = int(result.shape[0] * scale_percent / 100)
-    dim = (width, height)
-    resized_result = cv2.resize(result, dim, interpolation=cv2.INTER_AREA)
+        # 두 이미지의 크기를 동일하게 조정
+        min_height = min(src_img.shape[0], target_img.shape[0])
+        min_width = min(src_img.shape[1], target_img.shape[1])
+        src_img = cv2.resize(src_img, (min_width, min_height))
+        target_img = cv2.resize(target_img, (min_width, min_height))
 
-    cv2.imshow("BFMatcher Map", resized_result)
-    print(f"similarity : {similarity}")
+        # print BFMatcher Map
+        result = cv2.drawMatches(src_img, kp1, target_img, kp2, good_matches, None, flags=2)
 
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+        # 이미지 크기 조절
+        scale_percent = img_size  # 크기를 조절하려는 퍼센트
+        width = int(result.shape[1] * scale_percent / 100)
+        height = int(result.shape[0] * scale_percent / 100)
+        dim = (width, height)
+        resized_result = cv2.resize(result, dim, interpolation=cv2.INTER_AREA)
 
-    return similarity
+        cv2.imshow("BFMatcher Map", resized_result)
+        print(f"similarity : {similarity}")
 
-def get_sim_sift_noshow(src_img_path, target_img_path):
-    similarity, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        return similarity
+    except Exception as e:
+        raise e
+
     
-    return similarity
+def get_sim_sift_noshow(src_img_path, target_img_path):
+
+    try:
+        similarity, src_img, target_img, kp1, kp2, good_matches = calc_sim_shift(src_img_path, target_img_path)
+
+        return similarity
+    except Exception as e:
+        raise e
 
 '''
 rgb pixel keypoint based algorithm
