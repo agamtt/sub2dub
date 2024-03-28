@@ -84,7 +84,7 @@ def get_sim_sift_imshow(src_img_path, target_img_path, img_size=120):
 def get_sim_sift_noshow(src_img_path, target_img_path):
 
     try:
-        similarity, src_img, target_img, kp1, kp2, good_matches = calc_sim_shift(src_img_path, target_img_path)
+        similarity, src_img, target_img, kp1, kp2, good_matches = calc_sim_sift(src_img_path, target_img_path)
 
         return similarity
     except Exception as e:

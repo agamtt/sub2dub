@@ -82,7 +82,7 @@ puzzle algorithm test
 
 #ic.get_sim_sift_imshow(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\25.jpg",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\67.jpg")
 
-ic.get_sim_sift_imshow(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\311.jpg",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\dub_ep1_cfr\300.jpg")
+#ic.get_sim_sift_imshow(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr\311.jpg",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\dub_ep1_cfr\300.jpg")
 
 #vc.search_and_swap(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\dub_ep1_cfr",r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\output_ep1")
 
@@ -91,3 +91,8 @@ chunk algorithm test
 '''
 
 #vc.chunk_finder_by_sift(r"C:\Users\girin\Desktop\sub2dub\movies\img_sep_temp\blu_ep1_cfr")
+
+'''
+audio
+'''
+#ve.extract_audio_from_vid(r"C:\Users\girin\Desktop\sub2dub\movies\test_ep\dub_ep1_cfr.mp4",r"C:\Users\girin\Desktop\sub2dub\movies\test_ep\dub_ep1_cfr_audio.mp3")
