@@ -36,8 +36,8 @@ def convert_time(seconds):
 for ep_num in range(1,167+1):
 
     # 두 음악 파일 로드
-    audio_file1 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_index\blu_eye_from_ep1_short.mp3"
-    audio_file2 = f"C:\\Users\\girin\Desktop\sub2dub\\movies\\audio_shana\\blu\\blu_{str(ep_num).zfill(3)}.mp3"
+    audio_file1 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_index\dub_eye_from_ep1.mp3"
+    audio_file2 = f"C:\\Users\\girin\Desktop\sub2dub\\movies\\audio_shana\\dub\\dub_{str(ep_num).zfill(3)}.mp3"
     # audio_file1 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_extracked\blu_ep1_event_peaceful.mp3"
     # audio_file2 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_extracked\dub_ep1_range_contain_peaceful.mp3"
     
@@ -96,25 +96,25 @@ for ep_num in range(1,167+1):
     print(f"cosine_sim_max : {max(cosine_similarity)}")
     print(f"index : {max_sim_start_idx}")
     print(f"time  : {time_code}")
-    save_mp3(tag=f"blu_ep{ep_num}_{max_sim_start_idx}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
+    save_mp3(tag=f"dub_ep{ep_num}_{max_sim_start_idx}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
     print("audio file saved!!!")
 
 
     # 딕셔너리에 에피소드와 시간 저장
     try:
-        with open("blu_time.json", "r") as f:
+        with open("dub_time.json", "r") as f:
             episode_time_dict = json.load(f)
     except FileNotFoundError:
         episode_time_dict = {}
 
     
     # 변환된 시간 저장
-    episode_key = f"blu_ep{ep_num}"
+    episode_key = f"dub_ep{ep_num}"
 
     if episode_key not in episode_time_dict:
         episode_time_dict[episode_key] = {}
 
-    episode_time_dict[episode_key]["eye_start"] = time_code
+    episode_time_dict[episode_key]["eye_end"] = time_code
     episode_time_dict[episode_key]["eye_end_sim"] = str(max(cosine_similarity))
 
     if(max(cosine_similarity)>0.5):
@@ -122,5 +122,5 @@ for ep_num in range(1,167+1):
     else:
         episode_time_dict[episode_key]["eye_end_match"] = "MISS"
 
-    with open("episode_time_dict.json", "w") as f:
+    with open("dub_time.json", "w") as f:
         json.dump(episode_time_dict, f, indent=4) 
