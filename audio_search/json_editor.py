@@ -1,21 +1,33 @@
 import json
 
-for ep_num in range(1,55+1):
+type = "blu"
+
+json_file = f"{type}_time.json"
+
+for ep_num in range(2,167):
     # 딕셔너리에 에피소드와 시간 저장
     try:
-        with open("episode_time_dict.json", "r") as f:
+        with open(json_file, "r") as f:
             episode_time_dict = json.load(f)
     except FileNotFoundError:
         episode_time_dict = {}
 
 
     # 변환된 시간 저장
-    episode_key = f"blu_ep{ep_num}"
+    episode_key = f"{type}_ep{ep_num}"
 
-    if episode_key not in episode_time_dict:
-        episode_time_dict[episode_key] = {}
+    # if episode_key not in episode_time_dict:
+    #     episode_time_dict[episode_key] = {}
 
-    episode_time_dict[episode_key]["eye_type"] = "ep1"
+    # try:
+    #     del episode_time_dict[episode_key]["eye_end_match"]
+    # except:
+    #     pass
+    #episode_time_dict[f"blu_ep{ep_num}"]["ed_start"] = episode_time_dict[f"blu_ep{ep_num}"]["op_end"]
+    #episode_time_dict[episode_key]["eye_type"] = "sword"
+    # if episode_time_dict[episode_key].get("ed_type") == "DeepWoods":
+    #     episode_time_dict[episode_key]["ed_start"]="00:22:10.640"
+    #     print("set!")
 
-    with open("episode_time_dict.json", "w") as f:
+    with open(json_file, "w") as f:
         json.dump(episode_time_dict, f, indent=4) 
