@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import soundfile as sf
 import json
 
-DRWA_PLT = False # 유사도 그래프 출력 토글
+DRAW_PLT = False # 유사도 그래프 출력 토글
 
 
 ### MP3 파일로 저장 ### 
@@ -62,7 +62,7 @@ SIM_OFFSET = 0.3
 
 #####################
 
-for ep_num in range(9,14):
+for ep_num in range(8,12):
 
     # 두 음악 파일 로드
     audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\eye_{eye_type}.mp3"
@@ -97,7 +97,7 @@ for ep_num in range(9,14):
     max_index = -1 # 최대 유사도인 인덱스 선언 (초기값은 -1)
     cosine_similarity = [] # 코사인 유사도 리스트 선언 (최댓값 계산용)
     #print(f"y2 탐색 : {0}~{len(y2) - frame_size}")
-    for j in range(0 ,len(y2) - len(y1) + 1,1): # y2 를 step 1로 순회(전수조사)  
+    for j in range(0 ,len(y2) - len(y1) + 1,1): # y2 를 step 1로 순회(전수조사)
         window = y2[j:j+len(y1)] # 윈도우 : 프레임 사이즈와 동일
         similarity = np.dot(frame, window) / (np.linalg.norm(frame) * np.linalg.norm(window)) # y1 frame 과 y2 window 의 유사도를 계산
         cosine_similarity.append(similarity) # 코사인 유사도 리스트에 저장
@@ -105,7 +105,7 @@ for ep_num in range(9,14):
     ## 시각화
 
     # 코사인 유사도 리스트의 값을 그래프로 그린다. (하나의 프레임에 대해 출력됨)
-    if(DRWA_PLT==True):
+    if(DRAW_PLT==True):
         plt.plot(np.arange(len(cosine_similarity)) / sampling_rate, cosine_similarity)
         plt.title(f'Frame_Finder')
         plt.xlabel('Time (seconds)')
@@ -116,8 +116,7 @@ for ep_num in range(9,14):
     max_sim_start_idx = np.argmax(cosine_similarity)
     max_sim_end_idx = max_sim_start_idx+ eye_len
 
-    time_searched = max_sim_start_idx/sampling_rate
-    time_code_searched = convert_time(time_searched)
+    time_code_searched = convert_time(max_sim_start_idx/sampling_rate)
 
     print(f"EPISODE : {ep_num}")
     print(f"cosine_sim_max : {max(cosine_similarity)}")
@@ -148,18 +147,17 @@ for ep_num in range(9,14):
     if(max(cosine_similarity)>SIM_MATCH):
         episode_time_dict[episode_key]["eye_match"] = "MATCHED"
         episode_time_dict[episode_key]["eye_type"] = eye_type
-        episode_time_dict[episode_key]["eye_offset"] = 0
+        episode_time_dict[episode_key]["eye_offset"] = None
+        episode_time_dict[episode_key]["eye_start_time"] = time_code_searched
         save_mp3(tag=f"{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
         
     elif(max(cosine_similarity)>SIM_OFFSET):
-        
-        if(episode_key in episode_time_dict and episode_time_dict[episode_key].get("eye_match") != "OFFSET_CORRECT"):
-            episode_time_dict[episode_key]["eye_match"] = "OFFSET_UNCORRECT"
-            episode_time_dict[episode_key]["eye_type"] = eye_type
-            episode_time_dict[episode_key]["eye_offset"] = 0
+        episode_time_dict[episode_key]["eye_match"] = "OFFSET_UNCORRECT"
+        episode_time_dict[episode_key]["eye_type"] = eye_type
+        episode_time_dict[episode_key]["eye_offset"] = None
         save_mp3(tag=f"uncorrect_{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
     else:
         episode_time_dict[episode_key]["eye_match"] = "MISS"
 
     with open(f"{ep_type}_eye_time.json", "w") as f:
-        json.dump(episode_time_dict, f, indent=4) 
+        json.dump(episode_time_dict, f, indent=4)

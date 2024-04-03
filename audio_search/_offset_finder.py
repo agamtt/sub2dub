@@ -23,7 +23,7 @@ def save_mp3(tag, audio_file, start_index, end_index, sr1, sr2):
     # 파일 이름에 시작 시간을 포함하여 설정
     output_file = f"{tag}.mp3"
     sf.write(output_file, y_extracted, sr2, format='mp3')
-    print("audio file saved!!!")
+    print(f"audio file saved! : {output_file}")
 
 ## timecode 컨버터 ###
 def convert_time(seconds):
@@ -45,9 +45,9 @@ eye_sword_end = 168
 eye_spin_start = 0
 eye_spin_end = 0
 
-eye_offset = 700
+eye_offset_idx = 200
 
-eye_len = 2000
+eye_len_idx = 2000
 
 SIM_MATCH = 0.7
 SIM_OFFSET = 0.3
@@ -56,32 +56,52 @@ offset_need_lst = []
 
 # 딕셔너리 불러오기
 try:
-    with open(f"{ep_type}_time.json", "r") as f:
+    with open(f"{ep_type}_eye_time.json", "r") as f:
         episode_time_dict = json.load(f)
 except FileNotFoundError:
     episode_time_dict = {}
 
 
 # 변환된 시간 저장
-for ep_num in range(eye_sahon_start,13):
-    episode_key = f"{ep_type}_ep{ep_num}"
+# for ep_num in :
+#     episode_key = f"{ep_type}_ep{ep_num}"
 
-    if(episode_time_dict[episode_key]["eye_match"] == "OFFSET_UNCORRECT"):
-        offset_need_lst.append(ep_num)
+#     if(episode_time_dict[episode_key]["eye_match"] == "OFFSET_UNCORRECT"):
+#         offset_need_lst.append(ep_num)
+#     elif(episode_key in episode_time_dict and episode_time_dict[episode_key].get("eye_offset") != None): 
+#             episode_time_dict[episode_key]["eye_checked_start_time"] = convert_time(episode_time_dict[episode_key]["eye_searched_start_idx"]-episode_time_dict[episode_key]["eye_offset"])
+#             episode_time_dict[episode_key]["eye_match"] = "CORRECTED"
+ 
 
 
-for ep_num in offset_need_lst:
+for ep_num in range(8,12):
+    episode_key = f"blu_ep{ep_num}"
 
     # 두 음악 파일 로드
     audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\eye_{eye_type}.mp3"
     audio_file2 = f"C:\\Users\\girin\Desktop\sub2dub\\movies\\audio_shana\\{ep_type}\\{ep_type}_{str(ep_num).zfill(3)}.mp3"
 
-
-    # 샘플링 레이트 설정 (높을 수록 단위 샘플 많아짐, 시간 오래 걸림, 1000~44100(mp3))
     sampling_rate = 1000 # 실험결과 1000 정도가 적당
     sampling_rate_final = 44100
 
-    max_sim_start_idx = episode_time_dict[episode_key]["eye_start_idx"] - eye_offset
-    max_sim_end_idx = max_sim_start_idx+ eye_len
+    if(episode_time_dict[episode_key]["eye_match"] == "OFFSET_UNCORRECT"):
+        ### test the offset audio by saved file
+        print(f"{episode_key} is UNCORRECT...")
+        max_sim_start_idx = episode_time_dict[episode_key]["eye_searched_start_idx"] - eye_offset_idx
 
-    save_mp3(tag=f"offset{eye_offset}_{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
+        max_sim_end_idx = max_sim_start_idx + eye_len_idx        
+        save_mp3(tag=f"offset_{ep_type}_ep{ep_num}_{eye_offset_idx}_{eye_type}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
+        
+        if(episode_time_dict[episode_key]["eye_offset"] != None):
+            print(f"{episode_key} FIXED!")
+            episode_time_dict[episode_key]["eye_match"] = "MATCHED_BY_HUMAN"
+            episode_time_dict[episode_key]["eye_start_time"] = convert_time(max_sim_start_idx/sampling_rate)
+
+
+with open(f"{ep_type}_eye_time.json", "w") as f:
+        json.dump(episode_time_dict, f, indent=4)
+    
+
+
+
+        
