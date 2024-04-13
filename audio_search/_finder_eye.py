@@ -23,7 +23,7 @@ def save_mp3(tag, audio_file, start_index, end_index, sr1, sr2):
     # 추출된 오디오 원본 기준 시간
 
     # 파일 이름에 시작 시간을 포함하여 설정
-    output_file = f"{tag}.mp3"
+    output_file = f"{tag.split()[0]}_{tag.split()[2]}.mp3"
     sf.write(output_file, y_extracted, sr2, format='mp3')
     print("audio file saved!!!")
 
@@ -53,7 +53,7 @@ def update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, 
 ###################
 
 eye_type = "spin"
-ep_type = "blu"
+ep_type = "dub"
 
 ep_eye_type = {
     "eye_sahon_start" : 1,
@@ -71,6 +71,12 @@ eye_len_sec = {
     "eye_blu_sahon_from_ep9_len_sec" : 6.4,
     "eye_blu_sword_len_sec" : 0,
     "eye_blu_spin_len_sec" : 0,
+
+    "eye_dub_sahon_ep1_len_sec" : 0,
+    "eye_dub_sahon_len_sec" : 0,
+    "eye_dub_sahon_ep9_len_sec" : 0,
+    "eye_dub_sword_len_sec" : 0,
+    "eye_dub_spin_len_sec" : 0,
 }
 
 SIM_MATCH = 0.7
@@ -80,13 +86,11 @@ SIM_OFFSET = 0.3
 
 print(f"PROGRAM START : {eye_type}")
 
-for ep_num in range(56,168):
+for ep_num in range(107,168):
 
     # 두 음악 파일 로드
-    audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\eye_{eye_type}.mp3"
+    audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\{ep_type}_eye_{eye_type}.mp3"
     audio_file2 = f"C:\\Users\\girin\Desktop\sub2dub\\movies\\audio_shana\\{ep_type}\\{ep_type}_{str(ep_num).zfill(3)}.mp3"
-    # audio_file1 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_extracked\blu_ep1_event_peaceful.mp3"
-    # audio_file2 = r"C:\Users\girin\Desktop\sub2dub\movies\audio_extracked\dub_ep1_range_contain_peaceful.mp3"
 
     # 샘플링 레이트 설정 (높을 수록 단위 샘플 많아짐, 시간 오래 걸림, 1000~44100(mp3))
     sampling_rate = 1000 # 실험결과 1000 정도가 적당
