@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import soundfile as sf
 import json
+import re
+from collections import OrderedDict
 
 DRAW_PLT = False # 유사도 그래프 출력 토글
 
@@ -31,13 +33,26 @@ def convert_time(seconds):
     hours, minutes = divmod(minutes, 60)
     return "{:02d}:{:02d}:{:02d}".format(int(hours), int(minutes), int(seconds))
 
+def update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, match_status, audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=None):
+    episode_time_dict[episode_key]["eye_sim"] = str(max(cosine_similarity))
+    episode_time_dict[episode_key]["eye_sampling_rate"] = sampling_rate
+    episode_time_dict[episode_key]["eye_searched_start_time"] = time_code_searched
+    episode_time_dict[episode_key]["eye_searched_start_idx"] = int(max_sim_start_idx)
+    episode_time_dict[episode_key]["eye_len_sec"] = eye_len_sec[f"eye_{ep_type}_{eye_type}_len_sec"]
+    episode_time_dict[episode_key]["eye_match"] = match_status
+    episode_time_dict[episode_key]["eye_type"] = eye_type
+    episode_time_dict[episode_key]["eye_offset"] = eye_offset
+    episode_time_dict[episode_key]["eye_start_time"] = start_time
+    print(match_status)
+    save_mp3(tag=f"{match_status}{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
+
 
 ### 프레임 파인더 : y1 전체를 "프레임"으로 지정한 후, y2 에서 해당 프레임을 찾음
 
 ''' 전역상수 '''
 ###################
 
-eye_type = "sahon"
+eye_type = "spin"
 ep_type = "blu"
 
 ep_eye_type = {
@@ -53,6 +68,7 @@ ep_eye_type = {
 eye_len = 2000
 eye_len_sec = {
     "eye_blu_sahon_len_sec" : 6.4,
+    "eye_blu_sahon_from_ep9_len_sec" : 6.4,
     "eye_blu_sword_len_sec" : 0,
     "eye_blu_spin_len_sec" : 0,
 }
@@ -62,7 +78,9 @@ SIM_OFFSET = 0.3
 
 #####################
 
-for ep_num in range(8,12):
+print(f"PROGRAM START : {eye_type}")
+
+for ep_num in range(56,168):
 
     # 두 음악 파일 로드
     audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\eye_{eye_type}.mp3"
@@ -127,7 +145,7 @@ for ep_num in range(8,12):
     # 딕셔너리에 에피소드와 시간 저장
     try:
         with open(f"{ep_type}_eye_time.json", "r") as f:
-            episode_time_dict = json.load(f)
+            episode_time_dict = json.load(f, object_pairs_hook=OrderedDict)
     except Exception as e:
         episode_time_dict = {}
 
@@ -138,26 +156,37 @@ for ep_num in range(8,12):
     if episode_key not in episode_time_dict:
         episode_time_dict[episode_key] = {}
 
-    episode_time_dict[episode_key]["eye_sim"] = str(max(cosine_similarity))
-    episode_time_dict[episode_key]["eye_searched_start_time"] = time_code_searched
-    episode_time_dict[episode_key]["eye_searched_start_idx"] = int(max_sim_start_idx)
-    episode_time_dict[episode_key]["eye_sampling_rate"] = sampling_rate
-    episode_time_dict[episode_key]["eye_len_sec"] = eye_len_sec[f"eye_{ep_type}_{eye_type}_len_sec"]
-
+    ## 딕셔너리 편집 및 파일 저장
+    
     if(max(cosine_similarity)>SIM_MATCH):
-        episode_time_dict[episode_key]["eye_match"] = "MATCHED"
-        episode_time_dict[episode_key]["eye_type"] = eye_type
-        episode_time_dict[episode_key]["eye_offset"] = None
-        episode_time_dict[episode_key]["eye_start_time"] = time_code_searched
-        save_mp3(tag=f"{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
-        
-    elif(max(cosine_similarity)>SIM_OFFSET):
-        episode_time_dict[episode_key]["eye_match"] = "OFFSET_UNCORRECT"
-        episode_time_dict[episode_key]["eye_type"] = eye_type
-        episode_time_dict[episode_key]["eye_offset"] = None
-        save_mp3(tag=f"uncorrect_{ep_type}_ep{ep_num}_{eye_type}_{sampling_rate}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
-    else:
-        episode_time_dict[episode_key]["eye_match"] = "MISS"
+        update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, f"MATCHED : {eye_type}", audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=time_code_searched)
+        print(f"MATCHED : {eye_type}")
+
+    elif(max(cosine_similarity)>=SIM_OFFSET):
+        if("eye_match" in episode_time_dict[episode_key]):
+            if(episode_time_dict[episode_key]["eye_match"][:7] != "MATCHED"):
+                update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, f"OFFSET_UNCORRECT : {eye_type}", audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=None)
+                print(f"OFFSET_UNCORRECT : {eye_type}")
+            else:
+                print("Already Matched, PASS")
+        else:
+            update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, f"OFFSET_UNCORRECT : {eye_type}", audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=None)
+            print(f"OFFSET_UNCORRECT : {eye_type}")
+            
+
+    elif(max(cosine_similarity)<SIM_OFFSET):
+        if("eye_match" in episode_time_dict[episode_key]):
+            if(episode_time_dict[episode_key]["eye_match"][:7] != "MATCHED"):
+                update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, f"MISS : {eye_type}", audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=None)
+                print(f"MISS : {eye_type}")
+            else:
+                print("Already Matched, PASS")
+        else:
+            update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, sampling_rate, time_code_searched, max_sim_start_idx, eye_len_sec, ep_type, eye_type, f"MISS : {eye_type}", audio_file2, max_sim_end_idx, sampling_rate_final, eye_offset=None, start_time=None)
+            print(f"MISS : {eye_type}")
 
     with open(f"{ep_type}_eye_time.json", "w") as f:
-        json.dump(episode_time_dict, f, indent=4)
+        sorted_keys = sorted(episode_time_dict.keys(), key=lambda x: int(re.search(r'\d+', x).group()))
+        sorted_data = {key: episode_time_dict[key] for key in sorted_keys}
+        #print(sorted_keys)
+        json.dump(sorted_data, f, indent=4)

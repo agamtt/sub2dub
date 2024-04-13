@@ -45,14 +45,18 @@ eye_sword_end = 168
 eye_spin_start = 0
 eye_spin_end = 0
 
-eye_offset_idx = 200
-
 eye_len_idx = 2000
 
 SIM_MATCH = 0.7
 SIM_OFFSET = 0.3
 
 offset_need_lst = []
+
+
+####
+eye_offset_idx = 200
+#### 
+
 
 # 딕셔너리 불러오기
 try:
@@ -85,12 +89,14 @@ for ep_num in range(8,12):
     sampling_rate_final = 44100
 
     if(episode_time_dict[episode_key]["eye_match"] == "OFFSET_UNCORRECT"):
-        ### test the offset audio by saved file
-        print(f"{episode_key} is UNCORRECT...")
-        max_sim_start_idx = episode_time_dict[episode_key]["eye_searched_start_idx"] - eye_offset_idx
 
-        max_sim_end_idx = max_sim_start_idx + eye_len_idx        
-        save_mp3(tag=f"offset_{ep_type}_ep{ep_num}_{eye_offset_idx}_{eye_type}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
+        max_sim_start_idx = episode_time_dict[episode_key]["eye_searched_start_idx"] - eye_offset_idx
+        max_sim_end_idx = max_sim_start_idx + eye_len_idx
+        ### test the offset audio by saved file
+        if(episode_time_dict[episode_key]["eye_offset"] == None):
+            print(f"{episode_key} is UNCORRECT...")
+                    
+            save_mp3(tag=f"offset_{ep_type}_ep{ep_num}_{eye_offset_idx}_{eye_type}", audio_file=audio_file2, start_index=max_sim_start_idx, end_index=max_sim_end_idx, sr1=sampling_rate, sr2=sampling_rate_final)
         
         if(episode_time_dict[episode_key]["eye_offset"] != None):
             print(f"{episode_key} FIXED!")
