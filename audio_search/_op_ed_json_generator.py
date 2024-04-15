@@ -3,10 +3,10 @@ import re
 from collections import OrderedDict
 from enum import Enum
 
-blu_ep_type = "blu"
+ep_type = "blu"
 blu_eye_dict = {}
 ## 블루레이 아이캐치 딕셔너리 불러오기
-with open(f"{blu_ep_type}_eye_time.json", "r") as f:
+with open(f"{ep_type}_eye_time.json", "r") as f:
     blu_eye_dict = json.load(f, object_pairs_hook=OrderedDict)
 
 ## 테스트
@@ -93,10 +93,6 @@ blu_ed_dict = {
     },
 }
 
-op_end_time_dict = {
-    "blu_intro" : "00:01:17:02"
-}
-
 
 ## 오프닝 엔딩 시간 업데이트
 merged_blu_dict = {}
@@ -116,8 +112,66 @@ for key, value in blu_ed_dict.items():
         blu_eye_dict[f"blu_ep{ep}"]["ed_start"] = blu_ed_dict[key]["time"]
 
 ## 저장
-with open(f"{blu_ep_type}_merged_time.json", "w") as f:
-    # sorted_keys = sorted(blu_eye_dict.keys(), key=lambda x: int(re.search(r'\d+', x).group()))
-    # sorted_data = {key: blu_eye_dict[key] for key in sorted_keys}
-    # #print(sorted_keys)
+with open(f"{ep_type}_merged_time.json", "w") as f:
     json.dump(blu_eye_dict, f, indent=4)
+
+
+
+### dub
+
+ep_type = "dub"
+dub_eye_dict = {}
+## 더빙 아이캐치 딕셔너리 불러오기
+with open(f"{ep_type}_eye_time.json", "r") as f:
+    dub_eye_dict = json.load(f, object_pairs_hook=OrderedDict)
+
+# ## 테스트
+# print(dub_eye_dict["dub_ep1"])
+
+dub_op_dict = {
+    "seroun" : {
+        "start" : 1,
+        "end" : 1,
+        "time" : "00:01:29.960"
+    },
+    "none" : {
+        "start" : 2,
+        "end" : 167,
+        "time" : "00:00:00.000"
+    },
+}
+
+dub_ed_dict = {
+    "seroun_yego" : {
+        "start" : 1,
+        "end" : 1,
+        "time" : "00:22:01:000"
+    },
+    "yego" : {
+        "start" : 2,
+        "end" : 167,
+        "time" : "00:24:54:000"
+    },
+}
+
+## 오프닝 엔딩 시간 업데이트
+merged_blu_dict = {}
+
+for key, value in dub_op_dict.items():
+    start_value = value.get("start")
+    end_value = value.get("end")
+    for ep in range(start_value,end_value+1):
+        dub_eye_dict[f"dub_ep{ep}"]["op_type"] = key
+        dub_eye_dict[f"dub_ep{ep}"]["op_start"] = dub_op_dict[key]["time"]
+
+for key, value in dub_ed_dict.items():
+    start_value = value.get("start")
+    end_value = value.get("end")
+    for ep in range(start_value,end_value+1):
+        dub_eye_dict[f"dub_ep{ep}"]["ed_type"] = key
+        dub_eye_dict[f"dub_ep{ep}"]["ed_start"] = dub_ed_dict[key]["time"]
+
+## 저장
+with open(f"{ep_type}_merged_time.json", "w") as f:
+    json.dump(dub_eye_dict, f, indent=4)
+
