@@ -69,15 +69,15 @@ eye_len = 2000
 eye_len_sec = {
     "eye_blu_sahon_len_sec" : 6.4,
     "eye_blu_sahon_from_ep9_len_sec" : 6.4,
-    "eye_blu_sword_len_sec" : 0,
-    "eye_blu_spin_len_sec" : 0,
+    "eye_blu_sword_len_sec" : 6.4,
+    "eye_blu_spin_len_sec" : 6.4,
 
     "eye_dub_sahon_ep1_len_sec" : 5,
     "eye_dub_sahon_len_sec" : 5,
     "eye_dub_sahon_ep9_len_sec" : 3.9,
-    "eye_dub_sword_len_sec" : 0,
-    "eye_dub_spin_len_sec" : 0,
-    "eye_dub_spin_ep106_len_sec" : 0,
+    "eye_dub_sword_len_sec" : 7,
+    "eye_dub_spin_len_sec" : 7,
+    "eye_dub_spin_ep106_len_sec" : 7,
 }
 
 SIM_MATCH = 0.7
