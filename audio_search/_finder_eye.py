@@ -52,7 +52,7 @@ def update_episode_time_dict(episode_time_dict, episode_key, cosine_similarity, 
 ''' 전역상수 '''
 ###################
 
-eye_type = "spin"
+eye_type = "spin_ep106"
 ep_type = "dub"
 
 ep_eye_type = {
@@ -77,6 +77,7 @@ eye_len_sec = {
     "eye_dub_sahon_ep9_len_sec" : 0,
     "eye_dub_sword_len_sec" : 0,
     "eye_dub_spin_len_sec" : 0,
+    "eye_dub_spin_ep106_len_sec" : 0,
 }
 
 SIM_MATCH = 0.7
@@ -86,7 +87,7 @@ SIM_OFFSET = 0.3
 
 print(f"PROGRAM START : {eye_type}")
 
-for ep_num in range(107,168):
+for ep_num in range(126,127):
 
     # 두 음악 파일 로드
     audio_file1 = f"C:\\Users\\girin\\Desktop\\sub2dub\\movies\\audio_index\\{ep_type}_eye_{eye_type}.mp3"
