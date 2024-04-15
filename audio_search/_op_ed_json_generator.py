@@ -102,7 +102,7 @@ for key, value in blu_op_dict.items():
     end_value = value.get("end")
     for ep in range(start_value,end_value+1):
         blu_eye_dict[f"blu_ep{ep}"]["op_type"] = key
-        blu_eye_dict[f"blu_ep{ep}"]["op_start"] = blu_op_dict[key]["time"]
+        blu_eye_dict[f"blu_ep{ep}"]["op_end"] = blu_op_dict[key]["time"]
 
 for key, value in blu_ed_dict.items():
     start_value = value.get("start")
@@ -162,7 +162,7 @@ for key, value in dub_op_dict.items():
     end_value = value.get("end")
     for ep in range(start_value,end_value+1):
         dub_eye_dict[f"dub_ep{ep}"]["op_type"] = key
-        dub_eye_dict[f"dub_ep{ep}"]["op_start"] = dub_op_dict[key]["time"]
+        dub_eye_dict[f"dub_ep{ep}"]["op_end"] = dub_op_dict[key]["time"]
 
 for key, value in dub_ed_dict.items():
     start_value = value.get("start")

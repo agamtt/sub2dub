@@ -29,14 +29,13 @@ for file_name in sorted_files:  # 폴더 내 파일들에 대해 반복
 
     
 ### JSON READ ###
+blu_dict_file = r"C:\Users\girin\Desktop\sub2dub\blu_merged_time.json"
+with open(blu_dict_file, "r") as f:
+  blu_dict = json.load(f)
 
-for ep_num in range(1,167+1):
-    with open(r"C:\Users\girin\Desktop\sub2dub\blu_time.json", "r") as f:
-      blu_dict = json.load(f)
-
-for ep_num in range(1,167+1):
-    with open(r"C:\Users\girin\Desktop\sub2dub\dub_time.json", "r") as f:
-      dub_dict = json.load(f)
+dub_dict_file = r"C:\Users\girin\Desktop\sub2dub\dub_merged_time.json"
+with open(dub_dict_file, "r") as f:
+  dub_dict = json.load(f)
 
 zero_time = "00:00:00.000"
 big_time = "00:99:99.000"
