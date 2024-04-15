@@ -64,7 +64,7 @@ blu_ed_dict = {
     "Dearest" : {
         "start" : 42,
         "end" : 60,
-        "time" : "00:22:10"
+        "time" : "00:22:10.000"
     },
     "TruePoetry" : {
         "start" : 61,
