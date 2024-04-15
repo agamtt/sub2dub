@@ -45,9 +45,9 @@ big_time = "00:99:99.000"
 for ep in range(1,168):
   blu_op_end = blu_dict[f"blu_ep{ep}"]["op_end"]
 
-  blu_eye_start = blu_dict[f"blu_ep{ep}"]["eye_start"]+".000"
+  blu_eye_start = blu_dict[f"blu_ep{ep}"]["eye_start_time"]+".000"
   blu_eye_start_obj = datetime.strptime(blu_eye_start,"%H:%M:%S.%f")
-  blu_eye_len = blu_dict[f"blu_ep{ep}"]["eye_len"]
+  blu_eye_len = blu_dict[f"blu_ep{ep}"]["eye_len_sec"]
   blu_eye_end_obj = blu_eye_start_obj + timedelta(seconds=blu_eye_len)
   blu_eye_end = blu_eye_end_obj.strftime("%H:%M:%S.%f")[:-3]
 
@@ -55,15 +55,12 @@ for ep in range(1,168):
 
   dub_op_end = dub_dict[f"dub_ep{ep}"]["op_end"]
 
-  dub_eye_start = dub_dict[f"dub_ep{ep}"]["eye_start"]+".000"
+  dub_eye_start = dub_dict[f"dub_ep{ep}"]["eye_start_time"]+".000"
   dub_eye_start_obj = datetime.strptime(dub_eye_start,"%H:%M:%S.%f")
 
-  dub_eye_offset = dub_dict[f"dub_ep{ep}"]["eye_offset"]
-
-  dub_eye_start_obj += timedelta(seconds=dub_eye_offset)
   dub_eye_start = dub_eye_start_obj.strftime("%H:%M:%S.%f")[:-3]
 
-  dub_eye_len = dub_dict[f"dub_ep{ep}"]["eye_len"]
+  dub_eye_len = dub_dict[f"dub_ep{ep}"]["eye_len_sec"]
   dub_eye_end_obj = dub_eye_start_obj + timedelta(seconds=dub_eye_len)
   dub_eye_end = dub_eye_end_obj.strftime("%H:%M:%S.%f")[:-3]
 
