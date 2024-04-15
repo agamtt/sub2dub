@@ -1,0 +1,871 @@
+PS C:\Users\girin\Desktop\sub2dub> ^C
+PS C:\Users\girin\Desktop\sub2dub> 
+PS C:\Users\girin\Desktop\sub2dub>  c:; cd 'c:\Users\girin\Desktop\sub2dub'; & 'c:\Users\girin\AppData\Local\Programs\Python\Python311\python.exe' 'c:\Users\girin\.vscode\extensions\ms-python.debugpy-2024.4.0-win32-x64\bundled\libs\debugpy\adapter/../..\debugpy\launcher' '64954' '--' 'c:\Users\girin\Desktop\sub2dub\sub2dub\shotcut_py\shotcut_qt_automation.py' 
+Control Identifiers:
+
+Dialog - 'ep_2.mlt - Shotcut'    (L-1920, T23, R0, B1032)
+['ep_2.mlt - Shotcut', 'ep_2.mlt - ShotcutDialog', 'Dialog', 'Dialog0', 'Dialog1']
+child_window(title="ep_2.mlt - Shotcut", auto_id="MainWindow", control_type="Window")
+   | 
+   | TitleBar - ''    (L-1904, T-5, R0, B23)
+   | ['TitleBar']
+   |    | 
+   |    | Menu - '시스템'    (L-1920, T0, R-1898, B22)
+   |    | ['Menu', '시스템Menu', '시스템', '시스템0', '시스템1', 'Menu0', 'Menu1']
+   |    | child_window(title="시스템", auto_id="MenuBar", control_type="MenuBar")
+   |    |    | 
+   |    |    | MenuItem - '시스템'    (L-1920, T0, R-1898, B22)
+   |    |    | ['시스템MenuItem', 'MenuItem', '시스템2', 'MenuItem0', 'MenuItem1']
+   |    |    | child_window(title="시스템", control_type="MenuItem")
+   |    | 
+   |    | Button - '최소화'    (L-141, T0, R-94, B22)
+   |    | ['최소화', '최소화Button', 'Button', 'Button0', 'Button1']
+   |    | child_window(title="최소화", control_type="Button")
+   |    | 
+   |    | Button - '복원'    (L-94, T0, R-48, B22)
+   |    | ['복원', 'Button2', '복원Button']
+   |    | child_window(title="복원", control_type="Button")
+   |    |
+   |    | Button - '닫기'    (L-48, T0, R0, B22)
+   |    | ['닫기', '닫기Button', 'Button3']
+   |    | child_window(title="닫기", control_type="Button")
+   |
+   | Menu - ''    (L-1920, T23, R0, B43)
+   | ['Menu2']
+   | child_window(auto_id="MainWindow.menuBar", control_type="MenuBar")
+   |    |
+   |    | MenuItem - 'File'    (L-1914, T23, R-1888, B43)
+   |    | ['MenuItem2', 'File', 'FileMenuItem']
+   |    | child_window(title="File", control_type="MenuItem")
+   |    |
+   |    | MenuItem - 'Edit'    (L-1882, T23, R-1854, B43)
+   |    | ['MenuItem3', 'Edit', 'EditMenuItem', 'Edit0', 'Edit1']
+   |    | child_window(title="Edit", control_type="MenuItem")
+   |    | 
+   |    | MenuItem - 'View'    (L-1848, T23, R-1814, B43)
+   |    | ['MenuItem4', 'View', 'ViewMenuItem']
+   |    | child_window(title="View", control_type="MenuItem")
+   |    |
+   |    | MenuItem - 'Player'    (L-1808, T23, R-1768, B43)
+   |    | ['MenuItem5', 'PlayerMenuItem', 'Player', 'Player0', 'Player1']
+   |    | child_window(title="Player", control_type="MenuItem")
+   |    |
+   |    | MenuItem - 'Settings'    (L-1762, T23, R-1711, B43)
+   |    | ['Settings', 'MenuItem6', 'SettingsMenuItem']
+   |    | child_window(title="Settings", control_type="MenuItem")
+   |    |
+   |    | MenuItem - 'Help'    (L-1705, T23, R-1672, B43)
+   |    | ['Help', 'MenuItem7', 'HelpMenuItem']
+   |    | child_window(title="Help", control_type="MenuItem")
+   |
+   | Toolbar - 'Toolbar'    (L-1920, T43, R0, B98)
+   | ['ToolbarToolbar', 'Toolbar', 'Toolbar0', 'Toolbar1']
+   | child_window(title="Toolbar", auto_id="MainWindow.mainToolBar", control_type="ToolBar")
+   |    | 
+   |    | Button - 'Open File'    (L-1916, T47, R-1846, B94)
+   |    | ['Open File', 'Open FileButton', 'Button4']
+   |    | child_window(title="Open File", control_type="Button")
+   |    |
+   |    | Button - 'Open Other'    (L-1845, T47, R-1765, B94)
+   |    | ['Open OtherButton', 'Button5', 'Open Other']
+   |    | child_window(title="Open Other", control_type="Button")
+   |    |
+   |    | Button - 'Save'    (L-1764, T47, R-1720, B94)
+   |    | ['SaveButton', 'Button6', 'Save']
+   |    | child_window(title="Save", control_type="Button")
+   |    |
+   |    | GroupBox - ''    (L-1719, T47, R-1713, B94)
+   |    | ['GroupBox', 'GroupBox0', 'GroupBox1']
+   |    |
+   |    | Button - 'Undo'    (L-1712, T47, R-1667, B94)
+   |    | ['UndoButton', 'Button7', 'Undo']
+   |    | child_window(title="Undo", control_type="Button")
+   |    | 
+   |    | Button - 'Redo'    (L-1666, T47, R-1621, B94)
+   |    | ['Redo', 'Button8', 'RedoButton']
+   |    | child_window(title="Redo", control_type="Button")
+   |    |
+   |    | GroupBox - ''    (L-1620, T47, R-1614, B94)
+   |    | ['GroupBox2']
+   |    |
+   |    | Button - 'Peak Meter'    (L-1613, T47, R-1533, B94)
+   |    | ['Peak Meter', 'Button9', 'Peak MeterButton']
+   |    | child_window(title="Peak Meter", control_type="Button")
+   |    |
+   |    | Button - 'Properties'    (L-1532, T47, R-1459, B94)
+   |    | ['Properties', 'PropertiesButton', 'Button10', 'Properties0', 'Properties1']
+   |    | child_window(title="Properties", control_type="Button")
+   |    |
+   |    | Button - 'Recent'    (L-1458, T47, R-1403, B94)
+   |    | ['RecentButton', 'Recent', 'Button11', 'Recent0', 'Recent1']
+   |    | child_window(title="Recent", control_type="Button")
+   |    | 
+   |    | Button - 'Notes'    (L-1402, T47, R-1353, B94)
+   |    | ['Button12', 'NotesButton', 'Notes']
+   |    | child_window(title="Notes", control_type="Button")
+   |    |
+   |    | Button - 'Playlist'    (L-1352, T47, R-1295, B94)
+   |    | ['PlaylistButton', 'Playlist', 'Button13', 'Playlist0', 'Playlist1']
+   |    | child_window(title="Playlist", control_type="Button")
+   |    |
+   |    | Button - 'Timeline'    (L-1294, T47, R-1229, B94)
+   |    | ['TimelineButton', 'Button14', 'Timeline', 'Timeline0', 'Timeline1']
+   |    | child_window(title="Timeline", control_type="Button")
+   |    |
+   |    | Button - 'Filters'    (L-1228, T47, R-1178, B94)
+   |    | ['Button15', 'Filters', 'FiltersButton', 'Filters0', 'Filters1']
+   |    | child_window(title="Filters", control_type="Button")
+   |    |
+   |    | Button - 'Markers'    (L-1177, T47, R-1115, B94)
+   |    | ['Button16', 'Markers', 'MarkersButton']
+   |    | child_window(title="Markers", control_type="Button")
+   |    |
+   |    | Button - 'Keyframes'    (L-1114, T47, R-1037, B94)
+   |    | ['KeyframesButton', 'Button17', 'Keyframes', 'Keyframes0', 'Keyframes1']
+   |    | child_window(title="Keyframes", control_type="Button")
+   |    | 
+   |    | Button - 'History'    (L-1036, T47, R-981, B94)
+   |    | ['History', 'HistoryButton', 'Button18', 'History0', 'History1']
+   |    | child_window(title="History", control_type="Button")
+   |    |
+   |    | Button - 'Export'    (L-980, T47, R-928, B94)
+   |    | ['ExportButton', 'Export', 'Button19', 'Export0', 'Export1']
+   |    | child_window(title="Export", control_type="Button")
+   |    |
+   |    | Button - 'Jobs'    (L-927, T47, R-884, B94)
+   |    | ['Button20', 'JobsButton', 'Jobs', 'Jobs0', 'Jobs1']
+   |    | child_window(title="Jobs", control_type="Button")
+   |    |
+   |    | GroupBox - ''    (L-883, T47, R-533, B94)
+   |    | ['GroupBox3']
+   |    |
+   |    | GroupBox - ''    (L-353, T47, R-4, B94)
+   |    | ['GroupBox4']
+   |    | 
+   |    | GroupBox - ''    (L-532, T47, R-354, B94)
+   |    | ['GroupBox5']
+   |    | child_window(auto_id="MainWindow.mainToolBar.layoutSwitcherGrid", control_type="Group")
+   |    |    |
+   |    |    | CheckBox - 'Logging'    (L-532, T48, R-471, B67)
+   |    |    | ['Logging', 'LoggingCheckBox', 'CheckBox', 'CheckBox0', 'CheckBox1']
+   |    |    | child_window(title="Logging", control_type="CheckBox")
+   |    |    |
+   |    |    | CheckBox - 'Editing'    (L-465, T48, R-412, B67)
+   |    |    | ['Editing', 'CheckBox2', 'EditingCheckBox']
+   |    |    | child_window(title="Editing", control_type="CheckBox")
+   |    |    |
+   |    |    | CheckBox - 'FX'    (L-396, T48, R-365, B67)
+   |    |    | ['FX', 'CheckBox3', 'FXCheckBox']
+   |    |    | child_window(title="FX", control_type="CheckBox")
+   |    |    | 
+   |    |    | CheckBox - 'Color'    (L-525, T74, R-479, B93)
+   |    |    | ['ColorCheckBox', 'Color', 'CheckBox4']
+   |    |    | child_window(title="Color", control_type="CheckBox")
+   |    |    |
+   |    |    | CheckBox - 'Audio'    (L-463, T74, R-415, B93)
+   |    |    | ['AudioCheckBox', 'Audio', 'CheckBox5']
+   |    |    | child_window(title="Audio", control_type="CheckBox")
+   |    |    |
+   |    |    | CheckBox - 'Player'    (L-406, T74, R-354, B93)
+   |    |    | ['Player2', 'PlayerCheckBox', 'CheckBox6']
+   |    |    | child_window(title="Player", control_type="CheckBox")
+   |
+   | Dialog - 'Audio Peak Meter'    (L-239, T98, R-171, B757)
+   | ['Audio Peak MeterDialog', 'Dialog2', 'Audio Peak Meter']
+   | child_window(title="Audio Peak Meter", auto_id="MainWindow.AudioPeakMeterDock", control_type="Window")
+   |    | 
+   |    | GroupBox - ''    (L-239, T117, R-171, B757)
+   |    | ['GroupBox6', '--:--:--:--GroupBox', '--:--:--:--GroupBox0', '--:--:--:--GroupBox1']
+   |    |    |
+   |    |    | GroupBox - ''    (L-239, T117, R-171, B757)
+   |    |    | ['GroupBox7', '--:--:--:--GroupBox2']
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-239, T117, R-182, B625)
+   |    |    |    | ['GroupBox8']
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L-235, T121, R-186, B621)
+   |    |    |    |    | ['GroupBox9']
+   |    | 
+   |    | Button - 'Close'    (L-185, T100, R-172, B115)
+   |    | ['CloseButton', 'Button21', 'Close', 'CloseButton0', 'CloseButton1', 'Close0', 'Close1']
+   |    | child_window(title="Close", auto_id="MainWindow.AudioPeakMeterDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-199, T100, R-186, B115)
+   |    | ['Float', 'Button22', 'FloatButton', 'Float0', 'Float1', 'FloatButton0', 'FloatButton1']
+   |    | child_window(title="Float", auto_id="MainWindow.AudioPeakMeterDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Properties'    (L-2720, T-566, R-2420, B-477)
+   | ['Properties2', 'PropertiesDialog', 'Dialog3']
+   | child_window(title="Properties", auto_id="MainWindow.propertiesDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-2720, T-547, R-2420, B-477)
+   |    | ['GroupBox10']
+   |    |    | 
+   |    |    | GroupBox - ''    (L-2719, T-546, R-2435, B-478)
+   |    |    | ['GroupBox11']
+   |    |    |
+   |    |    | GroupBox - ''    (L-2435, T-546, R-2421, B-478)
+   |    |    | ['GroupBox12']
+   |    |    |    |
+   |    |    |    | ScrollBar - ''    (L-2435, T-546, R-2421, B-478)
+   |    |    |    | ['ScrollBar', 'ScrollBar0', 'ScrollBar1']
+   |    |
+   |    | Button - 'Close'    (L-2434, T-564, R-2421, B-549)
+   |    | ['CloseButton2', 'Button23', 'Close2']
+   |    | child_window(title="Close", auto_id="MainWindow.propertiesDock.qt_dockwidget_closebutton", control_type="Button")
+   |    | 
+   |    | Button - 'Float'    (L-2448, T-564, R-2435, B-549)
+   |    | ['Float2', 'Button24', 'FloatButton2']
+   |    | child_window(title="Float", auto_id="MainWindow.propertiesDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Playlist'    (L-2880, T-755, R-2420, B-477)
+   | ['Playlist2', 'Dialog4', 'PlaylistDialog']
+   | child_window(title="Playlist", auto_id="MainWindow.PlaylistDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-2880, T-736, R-2420, B-477)
+   |    | ['GroupBox13']
+   |    | child_window(auto_id="MainWindow.PlaylistDock.dockWidgetContents", control_type="Group")
+   |    |    | 
+   |    |    | Custom - ''    (L-2880, T-736, R-2420, B-512)
+   |    |    | ['Custom', 'Custom0', 'Custom1']
+   |    |    | child_window(auto_id="MainWindow.PlaylistDock.dockWidgetContents.stackedWidget", control_type="Custom")
+   |    |    |    | 
+   |    |    |    | GroupBox - ''    (L-2880, T-736, R-2420, B-512)
+   |    |    |    | ['GroupBox14']
+   |    |    |    | child_window(auto_id="MainWindow.PlaylistDock.dockWidgetContents.stackedWidget.page_2", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | Table - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['Table']
+   |    |    |    |    | child_window(auto_id="MainWindow.PlaylistDock.dockWidgetContents.stackedWidget.page_2.tableView", control_type="Table")
+   |    |    |    |    |
+   |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    | ['ListBox', 'ListBox0', 'ListBox1']
+   |    |    |    |    | child_window(auto_id="MainWindow.PlaylistDock.dockWidgetContents.stackedWidget.page_2.listView", control_type="List")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L-2880, T-736, R-2420, B-512)
+   |    |    |    |    | ['GroupBox15']
+   |    |    |    |    |    | 
+   |    |    |    |    |    | GroupBox - ''    (L-2879, T-735, R-2421, B-513)
+   |    |    |    |    |    | ['GroupBox16']
+   |    |    |
+   |    |    | Toolbar - 'Playlist Controls'    (L-2880, T-512, R-2420, B-479)
+   |    |    | ['Playlist Controls', 'Toolbar2', 'Playlist ControlsToolbar']
+   |    |    | child_window(title="Playlist Controls", control_type="ToolBar")
+   |    |    |    |
+   |    |    |    | Button - ''    (L-2879, T-511, R-2847, B-480)
+   |    |    |    | ['Button25']
+   |    |    |    | 
+   |    |    |    | GroupBox - ''    (L-2844, T-511, R-2838, B-480)
+   |    |    |    | ['GroupBox17']
+   |    |    |    |
+   |    |    |    | Button - 'Append'    (L-2835, T-511, R-2803, B-480)
+   |    |    |    | ['Button26', 'Append', 'AppendButton', 'Append0', 'Append1', 'AppendButton0', 'AppendButton1']
+   |    |    |    | child_window(title="Append", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Remove'    (L-2800, T-511, R-2768, B-480)
+   |    |    |    | ['Remove', 'RemoveButton', 'Button27']
+   |    |    |    | child_window(title="Remove", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Add Files'    (L-2765, T-511, R-2733, B-480)
+   |    |    |    | ['Add Files', 'Add FilesButton', 'Button28']
+   |    |    |    | child_window(title="Add Files", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Update'    (L-2730, T-511, R-2698, B-480)
+   |    |    |    | ['Button29', 'UpdateButton', 'Update']
+   |    |    |    | child_window(title="Update", control_type="Button")
+   |    |    |    | 
+   |    |    |    | GroupBox - ''    (L-2695, T-511, R-2689, B-480)
+   |    |    |    | ['GroupBox18']
+   |    |    |    |
+   |    |    |    | CheckBox - 'Details'    (L-2686, T-511, R-2654, B-480)
+   |    |    |    | ['CheckBox7', 'DetailsCheckBox', 'Details']
+   |    |    |    | child_window(title="Details", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | CheckBox - 'Tiles'    (L-2651, T-511, R-2619, B-480)
+   |    |    |    | ['Tiles', 'TilesCheckBox', 'CheckBox8']
+   |    |    |    | child_window(title="Tiles", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | CheckBox - 'Icons'    (L-2616, T-511, R-2584, B-480)
+   |    |    |    | ['Icons', 'CheckBox9', 'IconsCheckBox']
+   |    |    |    | child_window(title="Icons", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-2581, T-511, R-2575, B-480)
+   |    |    |    | ['GroupBox19']
+   |    | 
+   |    | Button - 'Close'    (L-2434, T-753, R-2421, B-738)
+   |    | ['CloseButton3', 'Button30', 'Close3']
+   |    | child_window(title="Close", auto_id="MainWindow.PlaylistDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-2448, T-753, R-2435, B-738)
+   |    | ['Float3', 'Button31', 'FloatButton3']
+   |    | child_window(title="Float", auto_id="MainWindow.PlaylistDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Filters'    (L-2820, T-777, R-2420, B-477)
+   | ['FiltersDialog', 'Filters2', 'Dialog5']
+   | child_window(title="Filters", auto_id="MainWindow.FiltersDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-2820, T-758, R-2420, B-477)
+   |    | ['GroupBox20']
+   |    | 
+   |    | Button - 'Close'    (L-2434, T-775, R-2421, B-760)
+   |    | ['CloseButton4', 'Button32', 'Close4']
+   |    | child_window(title="Close", auto_id="MainWindow.FiltersDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-2448, T-775, R-2435, B-760)
+   |    | ['Float4', 'Button33', 'FloatButton4']
+   |    | child_window(title="Float", auto_id="MainWindow.FiltersDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Keyframes'    (L-2620, T-529, R-2420, B-477)
+   | ['KeyframesDialog', 'Dialog6', 'Keyframes2']
+   | child_window(title="Keyframes", auto_id="MainWindow.KeyframesDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-2620, T-510, R-2420, B-477)
+   |    | ['GroupBox21']
+   |    |    | 
+   |    |    | Toolbar - 'Keyframes Controls'    (L-2620, T-510, R-2420, B-477)
+   |    |    | ['Toolbar3', 'Keyframes ControlsToolbar', 'Keyframes Controls']
+   |    |    | child_window(title="Keyframes Controls", control_type="ToolBar")
+   |    |    |    | 
+   |    |    |    | Button - ''    (L-2432, T-509, R-2420, B-478)
+   |    |    |    | ['Button34']
+   |    |    |    |
+   |    |    |    | Button - ''    (L-2619, T-509, R-2587, B-478)
+   |    |    |    | ['Button35']
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-2584, T-509, R-2578, B-478)
+   |    |    |    | ['GroupBox22']
+   |    |    |    |
+   |    |    |    | Button - 'Set Filter Start'    (L-2575, T-509, R-2543, B-478)
+   |    |    |    | ['Set Filter Start', 'Set Filter StartButton', 'Button36']
+   |    |    |    | child_window(title="Set Filter Start", control_type="Button")
+   |    |    |    | 
+   |    |    |    | Button - 'Set Filter End'    (L-2540, T-509, R-2508, B-478)
+   |    |    |    | ['Set Filter EndButton', 'Set Filter End', 'Button37']
+   |    |    |    | child_window(title="Set Filter End", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Set First Simple Keyframe'    (L-2505, T-509, R-2473, B-478)
+   |    |    |    | ['Button38', 'Set First Simple Keyframe', 'Set First Simple KeyframeButton']
+   |    |    |    | child_window(title="Set First Simple Keyframe", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Set Second Simple Keyframe'    (L-2470, T-509, R-2438, B-478)
+   |    |    |    | ['Set Second Simple KeyframeButton', 'Set Second Simple Keyframe', 'Button39']
+   |    |    |    | child_window(title="Set Second Simple Keyframe", control_type="Button")
+   |    |    |
+   |    |    | GroupBox - ''    (L0, T0, R0, B0)
+   |    |    | ['GroupBox23']
+   |    | 
+   |    | Button - 'Close'    (L-2434, T-527, R-2421, B-512)
+   |    | ['CloseButton5', 'Button40', 'Close5']
+   |    | child_window(title="Close", auto_id="MainWindow.KeyframesDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-2448, T-527, R-2435, B-512)
+   |    | ['Float5', 'Button41', 'FloatButton5']
+   |    | child_window(title="Float", auto_id="MainWindow.KeyframesDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'History'    (L-2570, T-566, R-2420, B-477)
+   | ['History2', 'Dialog7', 'HistoryDialog']
+   | child_window(title="History", auto_id="MainWindow.historyDock", control_type="Window")
+   |    |
+   |    | ListBox - ''    (L-2570, T-547, R-2420, B-477)
+   |    | ['ListBox2']
+   |    | child_window(auto_id="MainWindow.historyDock.historyView", control_type="List")
+   |    |    | 
+   |    |    | ListItem - '<empty>'    (L-2567, T-544, R-2423, B-529)
+   |    |    | ['ListItem', '<empty>ListItem', '<empty>', 'ListItem0', 'ListItem1']
+   |    |    | child_window(title="<empty>", control_type="ListItem")
+   |    |
+   |    | Button - 'Close'    (L-2434, T-564, R-2421, B-549)
+   |    | ['CloseButton6', 'Button42', 'Close6']
+   |    | child_window(title="Close", auto_id="MainWindow.historyDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-2448, T-564, R-2435, B-549)
+   |    | ['Float6', 'Button43', 'FloatButton6']
+   |    | child_window(title="Float", auto_id="MainWindow.historyDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Jobs'    (L-165, T98, R0, B733)
+   | ['JobsDialog', 'Dialog8', 'Jobs2']
+   | child_window(title="Jobs", auto_id="MainWindow.JobsDock", control_type="Window")
+   |    | 
+   |    | GroupBox - ''    (L-165, T117, R0, B733)
+   |    | ['GroupBox24', '--:--:--:--GroupBox3']
+   |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents", control_type="Group")
+   |    |    |
+   |    |    | GroupBox - ''    (L-165, T117, R0, B709)
+   |    |    | ['GroupBox25', '--:--:--:--GroupBox4']
+   |    |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents.scrollArea", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-165, T117, R0, B709)
+   |    |    |    | ['GroupBox26', '--:--:--:--GroupBox5']
+   |    |    |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    | 
+   |    |    |    |    | GroupBox - ''    (L-165, T117, R0, B709)
+   |    |    |    |    | ['GroupBox27', '--:--:--:--GroupBox6']
+   |    |    |    |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    |
+   |    |    |    |    |    | TreeView - ''    (L-165, T117, R0, B709)
+   |    |    |    |    |    | ['--:--:--:--TreeView', 'TreeView', 'TreeView0', 'TreeView1']
+   |    |    |    |    |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.treeView", control_type="Tree")
+   |    |    |
+   |    |    | Button - ''    (L-165, T709, R-137, B733)
+   |    |    | ['--:--:--:--Button', 'Button44']
+   |    |    | child_window(auto_id="MainWindow.JobsDock.dockWidgetContents.menuButton", control_type="Button")
+   |    |    |
+   |    |    | CheckBox - 'Pause'    (L-131, T711, R-51, B731)
+   |    |    | ['PauseCheckBox', 'Pause', 'CheckBox10']
+   |    |    | child_window(title="Pause", auto_id="MainWindow.JobsDock.dockWidgetContents.pauseButton", control_type="CheckBox")
+   |    |
+   |    | Button - 'Close'    (L-14, T100, R-1, B115)
+   |    | ['CloseButton7', 'Button45', 'Close7']
+   |    | child_window(title="Close", auto_id="MainWindow.JobsDock.qt_dockwidget_closebutton", control_type="Button")
+   |    | 
+   |    | Button - 'Float'    (L-28, T100, R-15, B115)
+   |    | ['Float7', 'Button46', 'FloatButton7']
+   |    | child_window(title="Float", auto_id="MainWindow.JobsDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Recent'    (L-2816, T-773, R-2420, B-477)
+   | ['Recent2', 'RecentDialog', 'Dialog9']
+   | child_window(title="Recent", auto_id="MainWindow.RecentDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-2816, T-754, R-2420, B-477)
+   |    | ['GroupBox28']
+   |    | child_window(auto_id="MainWindow.RecentDock.dockWidgetContents", control_type="Group")
+   |    |    | 
+   |    |    | Edit - ''    (L-2816, T-754, R-2420, B-731)
+   |    |    | ['Edit2']
+   |    |    | child_window(auto_id="MainWindow.RecentDock.dockWidgetContents.lineEdit", control_type="Edit")
+   |    |    |
+   |    |    | ListBox - ''    (L-2816, T-731, R-2420, B-477)
+   |    |    | ['ListBox3']
+   |    |    | child_window(auto_id="MainWindow.RecentDock.dockWidgetContents.listWidget", control_type="List")
+   |    |    |    | 
+   |    |    |    | ListItem - 'ep_2.mlt'    (L-2813, T-728, R-2437, B-713)
+   |    |    |    | ['ep_2.mltListItem', 'ListItem2', 'ep_2.mlt', 'ep_2.mltListItem0', 'ep_2.mltListItem1', 'ep_2.mlt0', 'ep_2.mlt1']
+   |    |    |    | child_window(title="ep_2.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_1.mlt'    (L-2813, T-709, R-2437, B-694)
+   |    |    |    | ['ListItem3', 'ep_1.mlt', 'ep_1.mltListItem', 'ep_1.mlt0', 'ep_1.mlt1', 'ep_1.mltListItem0', 'ep_1.mltListItem1']
+   |    |    |    | child_window(title="ep_1.mlt", control_type="ListItem")
+   |    |    |    | 
+   |    |    |    | ListItem - 'ep_165.mlt'    (L-2813, T-690, R-2437, B-675)
+   |    |    |    | ['ListItem4', 'ep_165.mlt', 'ep_165.mltListItem']
+   |    |    |    | child_window(title="ep_165.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_166.mlt'    (L-2813, T-671, R-2437, B-656)
+   |    |    |    | ['ListItem5', 'ep_166.mltListItem', 'ep_166.mlt']
+   |    |    |    | child_window(title="ep_166.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_167.mlt'    (L-2813, T-652, R-2437, B-637)
+   |    |    |    | ['ListItem6', 'ep_167.mlt', 'ep_167.mltListItem']
+   |    |    |    | child_window(title="ep_167.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_6.mlt'    (L-2813, T-633, R-2437, B-618)
+   |    |    |    | ['ListItem7', 'ep_6.mlt', 'ep_6.mltListItem']
+   |    |    |    | child_window(title="ep_6.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_5.mlt'    (L-2813, T-614, R-2437, B-599)
+   |    |    |    | ['ep_5.mlt', 'ListItem8', 'ep_5.mltListItem']
+   |    |    |    | child_window(title="ep_5.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_4.mlt'    (L-2813, T-595, R-2437, B-580)
+   |    |    |    | ['ep_4.mlt', 'ListItem9', 'ep_4.mltListItem']
+   |    |    |    | child_window(title="ep_4.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_3.mlt'    (L-2813, T-576, R-2437, B-561)
+   |    |    |    | ['ep_3.mltListItem', 'ListItem10', 'ep_3.mlt']
+   |    |    |    | child_window(title="ep_3.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_2.mlt'    (L-2813, T-557, R-2437, B-542)
+   |    |    |    | ['ep_2.mltListItem2', 'ListItem11', 'ep_2.mlt2']
+   |    |    |    | child_window(title="ep_2.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_1.mlt'    (L-2813, T-538, R-2437, B-523)
+   |    |    |    | ['ListItem12', 'ep_1.mlt2', 'ep_1.mltListItem2']
+   |    |    |    | child_window(title="ep_1.mlt", control_type="ListItem")
+   |    |    |    | 
+   |    |    |    | ListItem - 'ep_148.mlt'    (L-2813, T-519, R-2437, B-504)
+   |    |    |    | ['ep_148.mltListItem', 'ListItem13', 'ep_148.mlt']
+   |    |    |    | child_window(title="ep_148.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_147.mlt'    (L-2813, T-500, R-2437, B-485)
+   |    |    |    | ['ListItem14', 'ep_147.mltListItem', 'ep_147.mlt']
+   |    |    |    | child_window(title="ep_147.mlt", control_type="ListItem")
+   |    |    |    |
+   |    |    |    | ListItem - 'ep_146.mlt'    (L-2813, T-481, R-2437, B-466)
+   |    |    |    | ['ListItem15', 'ep_146.mlt', 'ep_146.mltListItem']
+   |    |    |    | child_window(title="ep_146.mlt", control_type="ListItem")
+   |    |
+   |    | Button - 'Close'    (L-2434, T-771, R-2421, B-756)
+   |    | ['CloseButton8', 'Button47', 'Close8']
+   |    | child_window(title="Close", auto_id="MainWindow.RecentDock.qt_dockwidget_closebutton", control_type="Button")
+   |    | 
+   |    | Button - 'Float'    (L-2448, T-771, R-2435, B-756)
+   |    | ['Float8', 'Button48', 'FloatButton8']
+   |    | child_window(title="Float", auto_id="MainWindow.RecentDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | TabControl - 'Export'    (L-1920, T733, R-1520, B757)
+   | ['Export2', 'TabControl', 'ExportTabControl', 'TabControl0', 'TabControl1']
+   | child_window(title="Export", control_type="Tab")
+   |    |
+   |    | TabItem - 'Playlist'    (L-1920, T733, R-1855, B757)
+   |    | ['TabItem', 'Playlist3', 'PlaylistTabItem', 'TabItem0', 'TabItem1']
+   |    | child_window(title="Playlist", control_type="TabItem")
+   |    |
+   |    | TabItem - 'Filters'    (L-1855, T733, R-1797, B757)
+   |    | ['TabItem2', 'FiltersTabItem', 'Filters3']
+   |    | child_window(title="Filters", control_type="TabItem")
+   |    | 
+   |    | TabItem - 'Properties'    (L-1797, T733, R-1716, B757)
+   |    | ['TabItem3', 'PropertiesTabItem', 'Properties3']
+   |    | child_window(title="Properties", control_type="TabItem")
+   |    |
+   |    | TabItem - 'Export'    (L-1716, T733, R-1656, B757)
+   |    | ['TabItem4', 'ExportTabItem', 'Export3']
+   |    | child_window(title="Export", control_type="TabItem")
+   |
+   | TabControl - 'Jobs'    (L-165, T733, R0, B757)
+   | ['Jobs3', 'TabControl2', 'JobsTabControl']
+   | child_window(title="Jobs", control_type="Tab")
+   |    |
+   |    | TabItem - 'Recent'    (L-165, T733, R-107, B757)
+   |    | ['TabItem5', 'Recent3', 'RecentTabItem']
+   |    | child_window(title="Recent", control_type="TabItem")
+   |    | 
+   |    | TabItem - 'History'    (L-107, T733, R-49, B757)
+   |    | ['TabItem6', 'HistoryTabItem', 'History3']
+   |    | child_window(title="History", control_type="TabItem")
+   |    |
+   |    | TabItem - 'Jobs'    (L-49, T733, R0, B757)
+   |    | ['TabItem7', 'JobsTabItem', 'Jobs4']
+   |    | child_window(title="Jobs", control_type="TabItem")
+   |
+   | TabControl - 'Timeline'    (L-1920, T1008, R0, B1032)
+   | ['TabControl3', 'TimelineTabControl', 'Timeline2']
+   | child_window(title="Timeline", control_type="Tab")
+   |    |
+   |    | TabItem - 'Keyframes'    (L-1920, T1008, R-1835, B1032)
+   |    | ['TabItem8', 'KeyframesTabItem', 'Keyframes3']
+   |    | child_window(title="Keyframes", control_type="TabItem")
+   |    | 
+   |    | TabItem - 'Timeline'    (L-1835, T1008, R-1762, B1032)
+   |    | ['TabItem9', 'TimelineTabItem', 'Timeline3']
+   |    | child_window(title="Timeline", control_type="TabItem")
+   |
+   | GroupBox - ''    (L-1514, T98, R-245, B757)
+   | ['GroupBox29', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox0', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox1']
+   | child_window(auto_id="MainWindow.centralWidget", control_type="Group")
+   |    |
+   |    | GroupBox - ''    (L-1514, T102, R-245, B757)
+   |    | ['GroupBox30', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox2']
+   |    | child_window(auto_id="MainWindow.centralWidget.Player", control_type="Group")
+   |    |    | 
+   |    |    | GroupBox - ''    (L-1514, T102, R-245, B662)
+   |    |    | ['GroupBox31', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox3']
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1514, T102, R-245, B662)
+   |    |    |    | ['GroupBox32', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox4']
+   |    |    |
+   |    |    | GroupBox - ''    (L-1514, T666, R-245, B692)
+   |    |    | ['GroupBox33', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox5']
+   |    |    | child_window(auto_id="MainWindow.centralWidget.Player.scrubBar", control_type="Group")
+   |    |    | 
+   |    |    | Toolbar - 'Transport Controls'    (L-1514, T696, R-245, B729)
+   |    |    | ['Toolbar4', 'Transport ControlsToolbar', 'Transport Controls']
+   |    |    | child_window(title="Transport Controls", control_type="ToolBar")
+   |    |    |    | 
+   |    |    |    | UpDown - '00:00:00:00'    (L-1513, T701, R-1394, B723)
+   |    |    |    | ['UpDown', '00:00:00:00UpDown', '00:00:00:00']
+   |    |    |    | child_window(title="00:00:00:00", control_type="Spinner")
+   |    |    |    |    |
+   |    |    |    |    | Edit - '00:00:00:00'    (L-1510, T704, R-1411, B720)
+   |    |    |    |    | ['Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!Edit', 'Edit3']
+   |    |    |    |    | child_window(title="00:00:00:00", control_type="Edit")
+   |    |    |    |
+   |    |    |    | Static - ' / 00:20:28:06'    (L-1391, T697, R-1292, B728)
+   |    |    |    | [' / 00:20:28:06', 'Static', ' / 00:20:28:06Static', 'Static0', 'Static1']
+   |    |    |    | child_window(title=" / 00:20:28:06", control_type="Text")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1289, T697, R-1015, B728)
+   |    |    |    | [' / 00:20:28:06GroupBox', 'GroupBox34', ' / 00:20:28:06GroupBox0', ' / 00:20:28:06GroupBox1']
+   |    |    |    | 
+   |    |    |    | Button - 'Skip Previous'    (L-1012, T697, R-980, B728)
+   |    |    |    | ['Button49', 'Skip PreviousButton', 'Skip Previous']
+   |    |    |    | child_window(title="Skip Previous", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Rewind'    (L-977, T697, R-945, B728)
+   |    |    |    | ['Rewind', 'Button50', 'RewindButton']
+   |    |    |    | child_window(title="Rewind", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Play/Pause'    (L-942, T697, R-910, B728)
+   |    |    |    | ['Play/PauseButton', 'Button51', 'Play/Pause']
+   |    |    |    | child_window(title="Play/Pause", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Fast Forward'    (L-907, T697, R-875, B728)
+   |    |    |    | ['Fast ForwardButton', 'Fast Forward', 'Button52']
+   |    |    |    | child_window(title="Fast Forward", control_type="Button")
+   |    |    |    | 
+   |    |    |    | Button - 'Skip Next'    (L-872, T697, R-840, B728)
+   |    |    |    | ['Skip Next', 'Button53', 'Skip NextButton']
+   |    |    |    | child_window(title="Skip Next", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - ''    (L-837, T698, R-796, B727)
+   |    |    |    | [' / 00:20:28:06Button', 'Button54', ' / 00:20:28:06Button0', ' / 00:20:28:06Button1']
+   |    |    |    | 
+   |    |    |    | Button - ''    (L-793, T698, R-752, B727)
+   |    |    |    | [' / 00:20:28:06Button2', 'Button55']
+   |    |    |    |
+   |    |    |    | Button - 'Volume'    (L-749, T697, R-717, B728)
+   |    |    |    | ['VolumeButton', 'Volume', 'Button56']
+   |    |    |    | child_window(title="Volume", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-714, T697, R-440, B728)
+   |    |    |    | [' / 00:20:28:06GroupBox2', 'GroupBox35']
+   |    |    |    | 
+   |    |    |    | Static - '--:--:--:-- / '    (L-437, T697, R-338, B728)
+   |    |    |    | ['Static2', '--:--:--:-- / Static', '--:--:--:-- / ']
+   |    |    |    | child_window(title="--:--:--:-- / ", control_type="Text")
+   |    |    |    |
+   |    |    |    | Static - '--:--:--:--'    (L-335, T697, R-246, B728)
+   |    |    |    | ['Static3', '--:--:--:--', '--:--:--:--Static']
+   |    |    |    | child_window(title="--:--:--:--", control_type="Text")
+   |    |    |
+   |    |    | TabControl - 'Project'    (L-1514, T733, R-1387, B757)
+   |    |    | ['Project', 'ProjectTabControl', 'TabControl4', 'Project0', 'Project1']
+   |    |    | child_window(title="Project", control_type="Tab")
+   |    |    |    | 
+   |    |    |    | TabItem - 'Source'    (L-1514, T733, R-1450, B757)
+   |    |    |    | ['TabItem10', 'Source', 'SourceTabItem']
+   |    |    |    | child_window(title="Source", control_type="TabItem")
+   |    |    |    |
+   |    |    |    | TabItem - 'Project'    (L-1450, T733, R-1387, B757)
+   |    |    |    | ['TabItem11', 'Project2', 'ProjectTabItem']
+   |    |    |    | child_window(title="Project", control_type="TabItem")
+   |    |    |
+   |    |    | GroupBox - ''    (L-1379, T733, R-790, B757)
+   |    |    | [' / 00:20:28:06GroupBox3', 'GroupBox36']
+   |    |    |    | 
+   |    |    |    | Button - '  Opening C:\Users\girin\Desktop\이누야샤_영상\shotcut_프로젝트\자동편집_수동검수\ep_2.mlt  '    (L-1379, T733, R-790, B757)
+   |    |    |    | ['  Opening C:\\Users\\girin\\Desktop\\이누야샤_영상\\shotcut_프로젝트\\자동편집_수동검수\\ep_2.mlt  Button', '  Opening C:\\Users\\girin\\Desktop\\이누야샤_영 상\\shotcut_프로젝트\\자동편집_수동검수\\ep_2.mlt  ', 'Button57']
+   |    |    |    | child_window(title="  Opening C:\Users\girin\Desktop\이누야샤_영상\shotcut_프로젝트\자동편집_수동검수\ep_2.mlt  ", control_type="Button")
+   |
+   | TabControl - ''    (L-2520, T-507, R-2420, B-477)
+   | ['TabControl5']
+   |
+   | Dialog - 'Timeline'    (L-1920, T763, R0, B1008)
+   | ['TimelineDialog', 'Dialog10', 'Timeline4']
+   | child_window(title="Timeline", auto_id="MainWindow.TimelineDock", control_type="Window")
+   |    |
+   |    | GroupBox - ''    (L-1920, T782, R0, B1008)
+   |    | [' / 00:20:28:06GroupBox4', 'GroupBox37']
+   |    |    | 
+   |    |    | Toolbar - 'Timeline Controls'    (L-1920, T782, R0, B815)
+   |    |    | ['Timeline Controls', 'Toolbar5', 'Timeline ControlsToolbar']
+   |    |    | child_window(title="Timeline Controls", control_type="ToolBar")
+   |    |    |    | 
+   |    |    |    | Button - ''    (L-1919, T783, R-1887, B814)
+   |    |    |    | ['PresetsButton', 'Button58', 'PresetsButton0', 'PresetsButton1']
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1884, T783, R-1877, B814)
+   |    |    |    | ['GroupBox38', 'PresetsGroupBox', 'PresetsGroupBox0', 'PresetsGroupBox1']
+   |    |    |    |
+   |    |    |    | Button - 'Cut'    (L-1874, T783, R-1842, B814)
+   |    |    |    | ['Button59', 'Cut', 'CutButton']
+   |    |    |    | child_window(title="Cut", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Copy'    (L-1839, T783, R-1807, B814)
+   |    |    |    | ['CopyButton', 'Button60', 'Copy']
+   |    |    |    | child_window(title="Copy", control_type="Button")
+   |    |    |    | 
+   |    |    |    | Button - 'Paste'    (L-1804, T783, R-1772, B814)
+   |    |    |    | ['PasteButton', 'Paste', 'Button61']
+   |    |    |    | child_window(title="Paste", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1769, T783, R-1763, B814)
+   |    |    |    | ['GroupBox39', 'FromGroupBox', 'FromGroupBox0', 'FromGroupBox1']
+   |    |    |    |
+   |    |    |    | Button - 'Append'    (L-1760, T783, R-1728, B814)
+   |    |    |    | ['Button62', 'Append2', 'AppendButton2']
+   |    |    |    | child_window(title="Append", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Ripple Delete'    (L-1725, T783, R-1693, B814)
+   |    |    |    | ['Ripple Delete', 'Button63', 'Ripple DeleteButton']
+   |    |    |    | child_window(title="Ripple Delete", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Lift'    (L-1690, T783, R-1658, B814)
+   |    |    |    | ['Button64', 'Lift', 'LiftButton']
+   |    |    |    | child_window(title="Lift", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Overwrite'    (L-1655, T783, R-1623, B814)
+   |    |    |    | ['Button65', 'OverwriteButton', 'Overwrite']
+   |    |    |    | child_window(title="Overwrite", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Split At Playhead'    (L-1620, T783, R-1588, B814)
+   |    |    |    | ['Split At Playhead', 'Split At PlayheadButton', 'Button66']
+   |    |    |    | child_window(title="Split At Playhead", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1585, T783, R-1578, B814)
+   |    |    |    | ['GroupBox40', 'FromGroupBox2']
+   |    |    |    |
+   |    |    |    | Button - 'Create/Edit Marker'    (L-1575, T783, R-1543, B814)
+   |    |    |    | ['Create/Edit MarkerButton', 'Button67', 'Create/Edit Marker']
+   |    |    |    | child_window(title="Create/Edit Marker", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Previous Marker'    (L-1540, T783, R-1508, B814)
+   |    |    |    | ['Previous Marker', 'Previous MarkerButton', 'Button68']
+   |    |    |    | child_window(title="Previous Marker", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Next Marker'    (L-1505, T783, R-1473, B814)
+   |    |    |    | ['Next MarkerButton', 'Button69', 'Next Marker']
+   |    |    |    | child_window(title="Next Marker", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1470, T783, R-1464, B814)
+   |    |    |    | ['GroupBox41', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!GroupBox6']
+   |    |    |    |
+   |    |    |    | CheckBox - 'Snap'    (L-1461, T783, R-1429, B814)
+   |    |    |    | ['Snap', 'CheckBox11', 'SnapCheckBox']
+   |    |    |    | child_window(title="Snap", control_type="CheckBox")
+   |    |    |    | 
+   |    |    |    | CheckBox - 'Scrub While Dragging'    (L-1426, T783, R-1394, B814)
+   |    |    |    | ['Scrub While DraggingCheckBox', 'CheckBox12', 'Scrub While Dragging']
+   |    |    |    | child_window(title="Scrub While Dragging", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | CheckBox - 'Ripple'    (L-1391, T783, R-1359, B814)
+   |    |    |    | ['Ripple', 'CheckBox13', 'RippleCheckBox']
+   |    |    |    | child_window(title="Ripple", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | CheckBox - 'Ripple All Tracks'    (L-1356, T783, R-1324, B814)
+   |    |    |    | ['Ripple All Tracks', 'CheckBox14', 'Ripple All TracksCheckBox']
+   |    |    |    | child_window(title="Ripple All Tracks", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | CheckBox - 'Ripple Markers'    (L-1321, T783, R-1289, B814)
+   |    |    |    | ['Ripple MarkersCheckBox', 'CheckBox15', 'Ripple Markers']
+   |    |    |    | child_window(title="Ripple Markers", control_type="CheckBox")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1286, T783, R-1279, B814)
+   |    |    |    | [' / 00:20:28:06GroupBox5', 'GroupBox42']
+   |    |    |    |
+   |    |    |    | Button - 'Zoom Timeline Out'    (L-1276, T783, R-1244, B814)
+   |    |    |    | ['Zoom Timeline OutButton', 'Button70', 'Zoom Timeline Out']
+   |    |    |    | child_window(title="Zoom Timeline Out", control_type="Button")
+   |    |    |    |
+   |    |    |    | Slider - ''    (L-1241, T791, R-1041, B806)
+   |    |    |    | [' / 00:20:28:06Slider', 'Slider']
+   |    |    |    | 
+   |    |    |    | Button - 'Zoom Timeline In'    (L-1038, T783, R-1006, B814)
+   |    |    |    | ['Button71', 'Zoom Timeline InButton', 'Zoom Timeline In']
+   |    |    |    | child_window(title="Zoom Timeline In", control_type="Button")
+   |    |    |    |
+   |    |    |    | Button - 'Zoom Timeline To Fit'    (L-1003, T783, R-971, B814)
+   |    |    |    | ['Zoom Timeline To FitButton', 'Button72', 'Zoom Timeline To Fit']
+   |    |    |    | child_window(title="Zoom Timeline To Fit", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-968, T783, R-962, B814)
+   |    |    |    | [' / 00:20:28:06GroupBox6', 'GroupBox43']
+   |    |    |    | 
+   |    |    |    | CheckBox - 'Record Audio'    (L-959, T783, R-927, B814)
+   |    |    |    | ['Record Audio', 'Record AudioCheckBox', 'CheckBox16']
+   |    |    |    | child_window(title="Record Audio", control_type="CheckBox")
+   |    |    |
+   |    |    | GroupBox - ''    (L-1920, T815, R0, B1008)
+   |    |    | [' / 00:20:28:06GroupBox7', 'GroupBox44']
+   |    |
+   |    | Button - 'Close'    (L-14, T765, R-1, B780)
+   |    | ['CloseButton9', 'Button73', 'Close9']
+   |    | child_window(title="Close", auto_id="MainWindow.TimelineDock.qt_dockwidget_closebutton", control_type="Button")
+   |    | 
+   |    | Button - 'Float'    (L-28, T765, R-15, B780)
+   |    | ['Float9', 'Button74', 'FloatButton9']
+   |    | child_window(title="Float", auto_id="MainWindow.TimelineDock.qt_dockwidget_floatbutton", control_type="Button")
+   |
+   | Dialog - 'Export'    (L-1920, T98, R-1520, B733)
+   | ['Export4', 'ExportDialog', 'Dialog11']
+   | child_window(title="Export", auto_id="MainWindow.EncodeDock", control_type="Window")
+   |    | 
+   |    | GroupBox - ''    (L-1920, T117, R-1520, B733)
+   |    | ['GroupBox45', 'PresetsGroupBox2']
+   |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents", control_type="Group")
+   |    |    |
+   |    |    | Static - 'Presets'    (L-1920, T117, R-1772, B131)
+   |    |    | ['PresetsStatic', 'Static4', 'Presets']
+   |    |    | child_window(title="Presets", auto_id="MainWindow.EncodeDock.dockWidgetContents.label_6", control_type="Text")
+   |    |    | 
+   |    |    | Edit - ''    (L-1920, T131, R-1772, B154)
+   |    |    | ['Edit4', 'PresetsEdit']
+   |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.presetsSearch", control_type="Edit")
+   |    |    |
+   |    |    | TreeView - ''    (L-1920, T154, R-1772, B709)
+   |    |    | ['PresetsTreeView', 'TreeView2']
+   |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.presetsTree", control_type="Tree")
+   |    |    | 
+   |    |    | Button - ''    (L-1920, T709, R-1892, B733)
+   |    |    | ['PresetsButton2', 'Button75']
+   |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.addPresetButton", control_type="Button")
+   |    |    |
+   |    |    | Button - ''    (L-1886, T709, R-1858, B733)
+   |    |    | ['PresetsButton3', 'Button76']
+   |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.removePresetButton", control_type="Button")
+   |    |    |
+   |    |    | GroupBox - ''    (L-1772, T117, R-1520, B713)
+   |    |    | ['GroupBox46', 'PresetsGroupBox3']
+   |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea", control_type="Group")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1772, T117, R-1520, B699)
+   |    |    |    | ['GroupBox47', 'PresetsGroupBox4']
+   |    |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | GroupBox - ''    (L-1772, T117, R-1491, B699)
+   |    |    |    |    | ['GroupBox48', 'PresetsGroupBox5']
+   |    |    |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents", control_type="Group")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Static - 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!'    (L-1766, T123, R-1497, B233)
+   |    |    |    |    |    | ['Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!', 'Static5', 'Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!Static']
+   |    |    |    |    |    | child_window(title="Export Help\nThe defaults create a H.264/AAC MP4 file, which is suitable for most users and purposes. Choose a Preset at the left before deciding to use the Advanced mode. The Advanced mode does not prevent creating an invalid combination of options!", auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.helpLabel", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | Static - 'From'    (L-1766, T236, R-1737, B258)
+   |    |    |    |    |    | ['Static6', 'From', 'FromStatic']
+   |    |    |    |    |    | child_window(title="From", auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.label_5", control_type="Text")
+   |    |    |    |    |    |
+   |    |    |    |    |    | ComboBox - ''    (L-1734, T236, R-1655, B258)
+   |    |    |    |    |    | ['ComboBox', 'FromComboBox']
+   |    |    |    |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.fromCombo", control_type="ComboBox")
+   |    |    |    |    |    |    | 
+   |    |    |    |    |    |    | ListBox - ''    (L0, T0, R0, B0)
+   |    |    |    |    |    |    | ['ListBox4']
+   |    |    |    |    |    |    |    |
+   |    |    |    |    |    |    |    | ListItem - 'Timeline'    (L0, T0, R753, B20)
+   |    |    |    |    |    |    |    | ['ListItem16', 'TimelineListItem', 'Timeline5']
+   |    |    |    |    |    |    |    | child_window(title="Timeline", control_type="ListItem")
+   |    |    |    |    |    |
+   |    |    |    |    |    | CheckBox - 'Use hardware encoder'    (L-1734, T263, R-1583, B279)
+   |    |    |    |    |    | ['Use hardware encoderCheckBox', 'CheckBox17', 'Use hardware encoder']
+   |    |    |    |    |    | child_window(title="Use hardware encoder", auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.hwencodeCheckBox", control_type="CheckBox")
+   |    |    |    |    |    | 
+   |    |    |    |    |    | Button - 'Configure...'    (L-1577, T261, R-1497, B281)
+   |    |    |    |    |    | ['Button77', 'Configure...Button', 'Configure...']
+   |    |    |    |    |    | child_window(title="Configure...", auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_viewport.scrollAreaWidgetContents.hwencodeButton", control_type="Button")
+   |    |    |    |
+   |    |    |    | GroupBox - ''    (L-1772, T699, R-1520, B713)
+   |    |    |    | ['GroupBox49', 'FromGroupBox3']
+   |    |    |    | child_window(auto_id="MainWindow.EncodeDock.dockWidgetContents.scrollArea.qt_scrollarea_hcontainer", control_type="Group")
+   |    |    |    |    |
+   |    |    |    |    | ScrollBar - ''    (L-1772, T699, R-1520, B713)
+   |    |    |    |    | ['ScrollBar2', 'FromScrollBar']
+   |    |    | 
+   |    |    | Button - 'Export File'    (L-1772, T713, R-1692, B733)
+   |    |    | ['Export FileButton', 'Export File', 'Button78']
+   |    |    | child_window(title="Export File", auto_id="MainWindow.EncodeDock.dockWidgetContents.encodeButton", control_type="Button")
+   |    |    |
+   |    |    | Button - 'Reset'    (L-1686, T713, R-1606, B733)
+   |    |    | ['ResetButton', 'Reset', 'Button79']
+   |    |    | child_window(title="Reset", auto_id="MainWindow.EncodeDock.dockWidgetContents.resetButton", control_type="Button")
+   |    |    |
+   |    |    | CheckBox - 'Advanced'    (L-1600, T713, R-1520, B733)
+   |    |    | ['CheckBox18', 'AdvancedCheckBox', 'Advanced']
+   |    |    | child_window(title="Advanced", auto_id="MainWindow.EncodeDock.dockWidgetContents.advancedButton", control_type="CheckBox")
+   |    | 
+   |    | Button - 'Close'    (L-1534, T100, R-1521, B115)
+   |    | ['CloseButton10', 'Button80', 'Close10']
+   |    | child_window(title="Close", auto_id="MainWindow.EncodeDock.qt_dockwidget_closebutton", control_type="Button")
+   |    |
+   |    | Button - 'Float'    (L-1548, T100, R-1535, B115)
+   |    | ['Float10', 'Button81', 'FloatButton10']
+   |    | child_window(title="Float", auto_id="MainWindow.EncodeDock.qt_dockwidget_floatbutton", control_type="Button")
