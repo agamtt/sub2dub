@@ -72,7 +72,7 @@ eye_len_sec = {
     "eye_blu_sword_len_sec" : 6.4,
     "eye_blu_spin_len_sec" : 6.4,
 
-    "eye_dub_sahon_ep1_len_sec" : 5,
+    "eye_dub_sahon_ep1_len_sec" : 4,
     "eye_dub_sahon_len_sec" : 5,
     "eye_dub_sahon_ep9_len_sec" : 3.9,
     "eye_dub_sword_len_sec" : 7,
